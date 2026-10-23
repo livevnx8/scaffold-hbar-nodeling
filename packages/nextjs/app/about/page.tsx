@@ -55,10 +55,63 @@ export default function AboutPage() {
       </div>
 
       <div className="card">
-        <h2>Mint flow (dry-run default)</h2>
+        <h2>Canonical testnet Hashinal</h2>
+        <p>
+          Linked Hashinal already on Hedera testnet (the demo to pitch — not the historical
+          empty-topic smoke):
+        </p>
+        <ul>
+          <li>
+            NFT{' '}
+            <a
+              href="https://hashscan.io/testnet/token/0.0.11146645/1"
+              target="_blank"
+              rel="noreferrer"
+            >
+              0.0.11146645#1
+            </a>{' '}
+            ·{' '}
+            <a
+              href="https://hashscan.io/testnet/token/0.0.11146645"
+              target="_blank"
+              rel="noreferrer"
+            >
+              HashScan token
+            </a>
+          </li>
+          <li>
+            Metadata HRL{' '}
+            <a
+              href="https://hashscan.io/testnet/topic/0.0.11144977"
+              target="_blank"
+              rel="noreferrer"
+            >
+              hcs://1/0.0.11144977
+            </a>{' '}
+            ·{' '}
+            <a
+              href="https://hashscan.io/testnet/topic/0.0.11144977"
+              target="_blank"
+              rel="noreferrer"
+            >
+              HashScan topic
+            </a>
+          </li>
+        </ul>
+        <p className="muted">
+          Try it on{' '}
+          <Link href="/verify">/verify</Link> → <strong>Load canonical HRL</strong>. CLI
+          re-proof: <code>npm run verify:testnet</code>.
+        </p>
+      </div>
+
+      <div className="card">
+        <h2>Mint flow (offline-first)</h2>
         <p>
           <code>HCS-1</code> → <code>TokenCreate</code> → <code>TokenMint</code> (metadata = UTF-8
-          HRL). Live Hedera txs and SentX writes stay opt-in. No keys in the browser.
+          HRL). Default path is dry-run; live submit is CLI-gated and already proven on testnet
+          via the linked Hashinal above. Prefer <code>mint:live -- --live --hrl …</code> over
+          topic-as-HRL. SentX writes stay manual. No keys in the browser.
         </p>
       </div>
 

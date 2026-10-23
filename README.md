@@ -161,7 +161,7 @@ npm run dev --workspace=@nodeling/nextjs
 - `/verify` — paste receipt JSON, receipts package, or HRL; upload `*-nodeling-receipts.json`
 - `/allowlist` — published snapshot hash + membership check
 - `/about` — what is a Nodeling Hashinal?
-- Screenshots (reference): `docs/screenshots/mint-tinies.png`, `mint-nodlings.png`, `verify.png`, `allowlist.png` — capture `/start` locally after `npm run dev` if you need a Getting started shot
+- Screenshots (reference): `docs/screenshots/mint-tinies.png`, `mint-nodlings.png`, `verify.png`, `start.png`, `allowlist.png`
 - `GET/POST /api/drop/export?preset=tinies` — zip from real art or POSTed collection config
 - `GET /api/collection?preset=tinies|nodlings|demo` — collection config + art manifest
 - `GET /api/art?collection=tinies&edition=1` — serve fixture PNG
