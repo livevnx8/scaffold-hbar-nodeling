@@ -17,7 +17,7 @@ Canonical product/protocol spec: [NODELING-HASHINAL.md](./NODELING-HASHINAL.md).
 5. `npm run dev --workspace=@nodeling/nextjs` — open **`/start`** first (Getting started; also the primary CTA on `/`), then `/`, `/verify`, `/allowlist`, `/about`
 6. Export a drop from the mint pad; paste receipts on `/verify` → **GREEN**
 7. Read [NODELING-HASHINAL.md](./NODELING-HASHINAL.md) + this file
-8. When ready for chain: `npm run mint:live -- --live` ([going-to-testnet.md](./going-to-testnet.md); testnet + keys only)
+8. When ready for chain: `npm run mint:live -- --live --hrl hcs://1/<topic>` after `inscribe:live` ([going-to-testnet.md](./going-to-testnet.md); testnet + keys only). Canonical linked demo already live: NFT `0.0.11146645` → `hcs://1/0.0.11144977` — re-proof with `npm run verify:testnet` or `/verify` → Load canonical HRL. Public CI runs on every push to `main`.
 
 Longer operator walkthrough: [walkthrough.md](./walkthrough.md). Architecture: [how-it-works.md](./how-it-works.md).
 
@@ -48,7 +48,7 @@ Longer operator walkthrough: [walkthrough.md](./walkthrough.md). Architecture: [
 **Goal:** Trust the package without trusting a screenshot.
 
 1. Receive `*-nodeling-receipts.json` (or a single authenticity receipt) from the operator — the sidecar that sits **beside** the DreamForge folder, not inside the SentX zip.
-2. Open **`/verify`** — paste the full JSON, use Upload JSON…, or paste an HRL `hcs://1/<topicId>`.
+2. Open **`/verify`** — paste the full JSON, use Upload JSON…, paste an HRL `hcs://1/<topicId>`, or try **Load canonical HRL** (testnet demo `hcs://1/0.0.11144977` → NFT [`0.0.11146645`](https://hashscan.io/testnet/token/0.0.11146645)).
 3. Read the verdict:
    - **GREEN** — content hashes, editions, and `taskHash` / `decisionHash` recompute cleanly.
    - **RED** — tampered file, wrong edition, forged allowlist, or broken receipt.
@@ -93,7 +93,7 @@ npm run dev --workspace=@nodeling/nextjs
 | Offline / never from UI | Live (CLI, opt-in `--live`) |
 |-------------------------|------------------------------|
 | `planHashinalMint` / dry-run helpers | `npm run inscribe:live -- --live` — HOL HCS-1 ([testnet-hcs1-inscribe-log.md](./testnet-hcs1-inscribe-log.md)) |
-| Browser signing | `npm run mint:live -- --live` (+ optional `--hrl`) ([testnet-smoke-log.md](./testnet-smoke-log.md)) |
+| Browser signing | `npm run mint:live -- --live --hrl …` (linked Hashinal — pitch this) or topic-as-HRL without `--hrl` ([testnet-smoke-log.md](./testnet-smoke-log.md)) |
 | — | `npm run anchor:live -- --live` — AuthenticityRegistry |
 | — | `npm run verify:testnet` — read-only re-proof |
 | SentX writes | **Never** from this template — operator uploads manually |

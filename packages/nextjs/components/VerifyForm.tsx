@@ -50,6 +50,12 @@ export function VerifyForm() {
     setError('Export did not include receipts — rebuild core');
   }
 
+  function loadCanonicalTestnetHrl() {
+    setError(null);
+    setOut(null);
+    setText('hcs://1/0.0.11144977');
+  }
+
   function onFile(file: File | undefined) {
     if (!file) return;
     const reader = new FileReader();
@@ -114,6 +120,50 @@ export function VerifyForm() {
       </header>
 
       <div className="card">
+        <h2>Canonical testnet demo (linked Hashinal)</h2>
+        <p className="muted">
+          Already minted on Hedera testnet — NFT{' '}
+          <a
+            href="https://hashscan.io/testnet/token/0.0.11146645/1"
+            target="_blank"
+            rel="noreferrer"
+          >
+            0.0.11146645#1
+          </a>{' '}
+          metadata HRL →{' '}
+          <a
+            href="https://hashscan.io/testnet/topic/0.0.11144977"
+            target="_blank"
+            rel="noreferrer"
+          >
+            hcs://1/0.0.11144977
+          </a>
+          . Offline Tinies / Nodlings / Demo fixtures below are unchanged.
+        </p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+          <button className="btn secondary" type="button" onClick={loadCanonicalTestnetHrl}>
+            Load canonical HRL
+          </button>
+          <a
+            className="btn secondary"
+            href="https://hashscan.io/testnet/token/0.0.11146645"
+            target="_blank"
+            rel="noreferrer"
+          >
+            HashScan token
+          </a>
+          <a
+            className="btn secondary"
+            href="https://hashscan.io/testnet/topic/0.0.11144977"
+            target="_blank"
+            rel="noreferrer"
+          >
+            HashScan topic
+          </a>
+        </div>
+      </div>
+
+      <div className="card">
         <label>Receipt JSON / receipts package / HRL</label>
         <textarea
           value={text}
@@ -133,6 +183,9 @@ export function VerifyForm() {
             onClick={() => void loadDemoReceiptsPackage()}
           >
             Load demo receipts package
+          </button>
+          <button className="btn secondary" type="button" onClick={loadCanonicalTestnetHrl}>
+            Load canonical HRL
           </button>
           <button
             className="btn secondary"

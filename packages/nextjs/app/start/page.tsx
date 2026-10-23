@@ -75,10 +75,47 @@ export default function StartPage() {
       ))}
 
       <div className="card">
-        <h2>Stubbed today vs live later</h2>
+        <h2>Canonical testnet demo</h2>
+        <p>
+          Linked Hashinal already on Hedera testnet (the demo to pitch — not the historical
+          empty-topic smoke):
+        </p>
+        <ul>
+          <li>
+            NFT{' '}
+            <a
+              href="https://hashscan.io/testnet/token/0.0.11146645/1"
+              target="_blank"
+              rel="noreferrer"
+            >
+              0.0.11146645#1
+            </a>
+          </li>
+          <li>
+            Metadata HRL{' '}
+            <a
+              href="https://hashscan.io/testnet/topic/0.0.11144977"
+              target="_blank"
+              rel="noreferrer"
+            >
+              hcs://1/0.0.11144977
+            </a>
+          </li>
+          <li>
+            Re-proof: <code>npm run verify:testnet</code> · UI:{' '}
+            <Link href="/verify">/verify</Link> → Load canonical HRL
+          </li>
+        </ul>
+        <p className="muted">
+          Offline Tinies / Nodlings / Demo presets on the mint pad stay unchanged.
+        </p>
+      </div>
+
+      <div className="card">
+        <h2>Offline-first vs live (opt-in CLI)</h2>
         <div className="row">
           <div>
-            <h3 style={{ fontSize: '0.95rem', margin: '0 0 0.5rem' }}>Stubbed / never</h3>
+            <h3 style={{ fontSize: '0.95rem', margin: '0 0 0.5rem' }}>Offline / never from UI</h3>
             <ul>
               {u.stubbedVsLive.stubbed.map((x) => (
                 <li key={x}>{x}</li>
@@ -86,7 +123,9 @@ export default function StartPage() {
             </ul>
           </div>
           <div>
-            <h3 style={{ fontSize: '0.95rem', margin: '0 0 0.5rem' }}>Live later (opt-in)</h3>
+            <h3 style={{ fontSize: '0.95rem', margin: '0 0 0.5rem' }}>
+              Live (proven on testnet, opt-in CLI)
+            </h3>
             <ul>
               {u.stubbedVsLive.liveLater.map((x) => (
                 <li key={x}>{x}</li>

@@ -75,7 +75,7 @@ npm run dev --workspace=@nodeling/nextjs
 2. Set mock now + minter; **Check mint gate** — allowlist denies `0.0.9999`, public allows.
 3. **Export drop package** — zip from the current config.
 4. **Build authenticity receipt** — GREEN for `0.0.2001` with allowlist on.
-5. `/verify` — load fixture or receipts package.
+5. `/verify` — load fixture, receipts package, or **Load canonical HRL** (testnet linked Hashinal).
 6. `/allowlist` — snapshot hash + membership.
 
 ## 4. Tests
@@ -84,6 +84,18 @@ npm run dev --workspace=@nodeling/nextjs
 npm test
 npm run lint
 ```
+
+
+## Canonical testnet demo
+
+Linked Hashinal (pitch this — not the historical empty-topic smoke):
+
+| | Id | HashScan |
+|---|-----|----------|
+| NFT | `0.0.11146645` serial 1 | [token](https://hashscan.io/testnet/token/0.0.11146645) · [#1](https://hashscan.io/testnet/token/0.0.11146645/1) |
+| Metadata HRL | `hcs://1/0.0.11144977` | [topic](https://hashscan.io/testnet/topic/0.0.11144977) |
+
+UI: `/verify` → **Load canonical HRL**. CLI: `npm run verify:testnet`. Public CI: `.github/workflows/ci.yml` on `main`.
 
 ## Phase 2 note
 

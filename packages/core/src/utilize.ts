@@ -77,7 +77,7 @@ export function describeNodelingUtilize(): NodelingUtilizeDescription {
         id: 'builder',
         title: 'Builder / agent',
         oneLiner:
-          'Clone or copy the scaffold, npm install && npm run demo → GREEN/RED + DROP PASS; fork core APIs; live chain stays stubbed.',
+          'Clone or copy the scaffold, npm install && npm run demo → GREEN/RED + DROP PASS; fork core APIs; live Hedera stays CLI-gated (canonical linked Hashinal already on testnet).',
         steps: [
           'Copy or clone scaffold-hbar-nodeling (Node ≥ 20.18.3)',
           'npm install && npm run build && npm run demo — expect GREEN/RED authenticity + Tinies DROP PASS + VERIFY-FROM-PACKAGE GREEN',
@@ -120,9 +120,10 @@ export function describeNodelingUtilize(): NodelingUtilizeDescription {
       ],
       liveLater: [
         'npm run inscribe:live -- --live (HOL HCS-1 file bytes)',
-        'npm run mint:live -- --live [--hrl hcs://1/<topic>]',
+        'npm run mint:live -- --live --hrl hcs://1/<topic> (linked Hashinal — pitch this)',
+        'npm run mint:live -- --live (topic-as-HRL plumbing only)',
         'npm run anchor:live -- --live (AuthenticityRegistry)',
-        'npm run verify:testnet (read-only re-proof)',
+        'npm run verify:testnet (read-only re-proof of 0.0.11146645 → hcs://1/0.0.11144977)',
         'Manual list on SentX DreamForge / HashPack (operator upload)',
       ],
     },

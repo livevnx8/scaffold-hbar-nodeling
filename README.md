@@ -1,8 +1,10 @@
 # Nodeling (Scaffold-HBAR)
 
 > **Nodeling** — Vera Labs’ Hashinal authenticity + NFT mint pad. Not a SentX competitor —
-> prepare collections offline, mint (dry-run / later testnet), then list on SentX DreamForge
-> or HashPack. NFT-first; Phase 2: music drops.
+> prepare collections offline-first, prove authenticity, then mint on Hedera testnet (gated CLI)
+> and list on SentX DreamForge or HashPack. NFT-first; Phase 2: music drops.
+>
+> [![CI](https://github.com/livevnx8/scaffold-hbar-nodeling/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/livevnx8/scaffold-hbar-nodeling/actions/workflows/ci.yml)
 
 **Hashinal** is the protocol (HCS-5 NFTs whose media/metadata are inscribed via HCS-1; the
 NFT metadata is an HRL `hcs://1/<topicId>`). **Nodeling** is our product name for this pad.
@@ -43,10 +45,21 @@ npm run lint
 
 Plus a multi-collection allowlist snapshot (wolves + tinies fixtures) with sha256
 integrity and membership checks. Offline `planHashinalMint` stays dry-run
-(`dryRun: true` / `liveInscription: 'stubbed'`). **Gated live smoke:**
-`npm run mint:live -- --live` (testnet + operator env only; optional `--hrl`) — see
+(`dryRun: true` / `liveInscription: 'stubbed'`).
+
+**Gated live smoke (testnet + operator env only)** — see
 [docs/going-to-testnet.md](./docs/going-to-testnet.md) and
-[docs/testnet-smoke-log.md](./docs/testnet-smoke-log.md). HCS-1 *file* inscription: `npm run inscribe:live -- --live` (HOL zstd/base64 chunks). Registry: `npm run anchor:live -- --live`. Read-only re-proof: `npm run verify:testnet`. Default `mint:live` is topic-as-HRL; pass `--hrl` to link an inscription.
+[docs/testnet-smoke-log.md](./docs/testnet-smoke-log.md):
+
+| Command | Role |
+|---------|------|
+| `npm run inscribe:live -- --live` | HCS-1 *file* inscription (HOL zstd/base64 chunks) |
+| `npm run mint:live -- --live --hrl hcs://1/<topic>` | **Pitch this** — linked Hashinal (metadata HRL → file topic) |
+| `npm run mint:live -- --live` | Topic-as-HRL only (empty topic; fine for plumbing, not the demo) |
+| `npm run anchor:live -- --live` | AuthenticityRegistry anchor |
+| `npm run verify:testnet` | Read-only re-proof of the canonical linked demo |
+
+Canonical linked Hashinal already on testnet: NFT [`0.0.11146645`](https://hashscan.io/testnet/token/0.0.11146645) → [`hcs://1/0.0.11144977`](https://hashscan.io/testnet/topic/0.0.11144977).
 
 ## Prep → validate → authenticity sidecar → list on SentX
 
@@ -126,7 +139,7 @@ Command that closed the link: `npm run mint:live -- --live --hrl hcs://1/0.0.111
 - Package / file re-check — `verifyDropPackage(folder)` (or verify-from-package / `/verify` with a receipts package + local files via drop tooling).
 - **Allowlist misuse risk:** the allowlist check runs only when `claim.allowlistSnapshotHash` is set. Omitting the snapshot hash skips membership (optional by design). When a snapshot *is* set, build requires `allowlistMember === true`, but build does **not** call `verifyAllowlistMembership` itself — callers who pass `allowlistMember: true` without checking can mint a green receipt; `verifyAuthenticityReceipt` will still pass that forged membership flag. Always pass `allowlistMember: verifyAllowlistMembership(snapshot, minter)`.
 
-CI: [`.github/workflows/ci.yml`](./.github/workflows/ci.yml) runs `npm ci` → `npm test` → `npm run lint` → `npm run build` → `npm run demo` on every push/PR to `main`.
+Public CI (badge above): [`.github/workflows/ci.yml`](./.github/workflows/ci.yml) runs `npm ci` → `npm test` → `npm run lint` → `npm run build` → `npm run demo` on every push/PR to `main`.
 
 ## Packages
 

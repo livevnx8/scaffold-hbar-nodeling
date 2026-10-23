@@ -31,7 +31,7 @@ Or as a list:
 5. **Public verify** — paste receipt / package / HRL; recompute hashes; no trust-me screenshots.
 6. **List elsewhere** — SentX DreamForge / HashPack. Nodeling is **not** a marketplace competitor.
 
-## Mint flow (dry-run default)
+## Mint flow (offline-first; live CLI-gated)
 
 Ordered plan from `planHashinalMint`:
 
@@ -41,6 +41,9 @@ Ordered plan from `planHashinalMint`:
 4. *(optional)* **Registry anchor** — stub `decisionHash` write
 
 Live Hedera txs and SentX writes stay **opt-in / env-gated**. Default is dry-run; no keys in the browser.
+Pitch the **linked** path (`inscribe:live` then `mint:live --hrl`); topic-as-HRL without `--hrl` is plumbing only.
+
+**Canonical testnet demo:** NFT [`0.0.11146645`](https://hashscan.io/testnet/token/0.0.11146645) → [`hcs://1/0.0.11144977`](https://hashscan.io/testnet/topic/0.0.11144977). Public CI on `main`.
 
 ## Why it’s cool
 
@@ -54,6 +57,7 @@ Live Hedera txs and SentX writes stay **opt-in / env-gated**. Default is dry-run
 
 - **NFT-first.** Music drops are Phase 2 (deferred).
 - Spec module: `@nodeling/core` → `describeNodelingHashinal()`.
-- UI: Next.js `/start` (utilize paths) · `/about`.
+- UI: Next.js `/start` (utilize paths) · `/verify` (canonical HRL preset) · `/about`.
 - How others use it: [for-others.md](./for-others.md).
 - Longer walkthrough: [how-it-works.md](./how-it-works.md).
+- Public CI: `.github/workflows/ci.yml` (test · lint · build · demo).

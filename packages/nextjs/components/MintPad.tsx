@@ -756,7 +756,7 @@ export function MintPad() {
         )}
         <p className="muted" style={{ marginTop: '0.5rem' }}>
           Export uses the collection config above (tiers → editions). Sidecars stay beside the
-          DreamForge folder. Live mint/inscribe/anchor are CLI-gated (`mint:live` / `inscribe:live` / `anchor:live`).
+          DreamForge folder. Live mint/inscribe/anchor are CLI-gated (`mint:live --hrl …` for linked Hashinal / `inscribe:live` / `anchor:live`). Canonical testnet demo on `/verify`.
         </p>
       </div>
 

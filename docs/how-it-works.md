@@ -11,8 +11,11 @@ How others use it (creator · collector · builder): [for-others.md](./for-other
 2. Create an HCS-5 NFT whose metadata is the HRL `hcs://1/<topicId>`.
 3. Anyone can resolve the HRL to the inscribed content.
 
-This template **defaults to offline dry-run** for inscription and TokenCreate/TokenMint. Live submit is CLI-gated (`inscribe:live` / `mint:live` / `anchor:live`). Offline, it still
-builds the metadata shape, HRL placeholder, content hash, and authenticity receipt.
+This template is **offline-first**: default inscription and TokenCreate/TokenMint stay dry-run.
+Live submit is CLI-gated (`inscribe:live` / `mint:live` / `anchor:live`) and already proven on
+Hedera testnet — canonical linked Hashinal NFT `0.0.11146645` → `hcs://1/0.0.11144977`
+(see [testnet-smoke-log.md](./testnet-smoke-log.md)). Public CI on `main` runs test/lint/build/demo.
+Offline, the pad still builds the metadata shape, HRL placeholder, content hash, and authenticity receipt.
 
 ## Authenticity receipt
 
@@ -61,10 +64,12 @@ GREEN when everything matches, RED on tamper / HRL / edition mismatch.
 
 Flow: **prep → validate → authenticity sidecar → list/mint on SentX**.
 
-## On-chain (optional later)
+## On-chain (opt-in CLI; proven on testnet)
 
 `AuthenticityRegistry` stores `decisionHash` per `claimId` and optional collection
 pointers (`allowlistSnapshotHash`, HTS `tokenId`). Operator-gated writes; public reads.
+Registry on testnet: `0xF19e3390933b318808a0df5Ed4fbD18783f10234`. Prefer
+`mint:live -- --live --hrl …` (linked Hashinal) over topic-as-HRL when pitching the demo.
 
 ## Architecture boundary
 

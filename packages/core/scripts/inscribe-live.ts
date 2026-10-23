@@ -7,6 +7,9 @@
  *   - HEDERA_OPERATOR_ID + HEDERA_OPERATOR_KEY are set
  *
  * Does NOT TokenCreate / TokenMint (expensive). TopicCreate + TopicMessageSubmit only.
+ * After this succeeds, mint a linked Hashinal with:
+ *   npm run mint:live -- --live --hrl hcs://1/<topicId>
+ * Canonical linked demo: NFT 0.0.11146645 → hcs://1/0.0.11144977
  *
  * Usage: npm run inscribe:live -- --live
  */

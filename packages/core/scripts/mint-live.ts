@@ -1,5 +1,5 @@
 /**
- * Gated Hedera TESTNET smoke: TopicCreate → TokenCreate (NFT) → TokenMint (HRL metadata).
+ * Gated Hedera TESTNET smoke: TokenCreate (NFT) → TokenMint (HRL metadata).
  *
  * Refuses unless:
  *   - argv contains exact `--live`
@@ -7,13 +7,18 @@
  *   - HEDERA_OPERATOR_ID + HEDERA_OPERATOR_KEY are set
  *
  * Never invoked by `npm run demo`, unit tests, or `mint:plan`.
- * By default creates an empty topic and uses it as the HRL target (topic-as-HRL).
- * Pass `--hrl hcs://1/<topicId>` to mint against an existing inscription (e.g. from
- * `inscribe:live`) and skip TopicCreate.
+ *
+ * Recommended (linked Hashinal — the demo to pitch):
+ *   npm run inscribe:live -- --live          # HOL file bytes → topic
+ *   npm run mint:live -- --live --hrl hcs://1/<topicId>
+ * Canonical demo already on testnet: NFT 0.0.11146645 → hcs://1/0.0.11144977
+ *
+ * Default without `--hrl` still works for plumbing: TopicCreate → topic-as-HRL
+ * (empty topic). Prefer `--hrl` so metadata points at inscribed file bytes.
  *
  * Usage:
- *   npm run mint:live -- --live
  *   npm run mint:live -- --live --hrl hcs://1/0.0.11144977
+ *   npm run mint:live -- --live
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
@@ -91,7 +96,7 @@ function parseExistingHrl(argv: string[]): string | undefined {
 function assertLiveGate(argv: string[]): void {
   if (!argv.includes('--live')) {
     refuse(
-      'missing exact --live flag. Usage: npm run mint:live -- --live',
+      'missing exact --live flag. Usage: npm run mint:live -- --live [--hrl hcs://1/<topic>]',
     );
   }
 }
@@ -173,7 +178,7 @@ async function main(): Promise<void> {
     console.log(`Using existing HRL (skip TopicCreate): ${existingHrl}\n`);
   } else {
     console.log(
-      'Note: TopicCreate → topic-as-HRL. For file bytes first run inscribe:live, then mint:live --hrl hcs://1/<topic>.\n',
+      'Note: TopicCreate → topic-as-HRL (empty topic). Pitch the linked path: inscribe:live, then mint:live --hrl hcs://1/<topic>.\n',
     );
   }
 
