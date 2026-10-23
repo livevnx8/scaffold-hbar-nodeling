@@ -27,12 +27,17 @@ npm create scaffold-hbar@latest -- my-nodeling \
 
 Cold path (no Hedera account, no keys): `npm install && npm run build && npm run demo` → expect
 GREEN/RED authenticity, Tinies **DROP PASS**, **VERIFY-FROM-PACKAGE GREEN**. Then
-`npm run dev --workspace=@nodeling/nextjs` and open **`/start`**.
+`npm run dev --workspace=@nodeling/nextjs` and open **`/start`** (also `/` for the mint pad).
 
 Audience runbook: **`docs/for-others.md`** (creator · collector · builder + day-one checklist).
 Canonical Hashinal spec: `docs/NODELING-HASHINAL.md`. Utilize helper:
 `describeNodelingUtilize()` in `@nodeling/core`. Do not call SentX write APIs; do not put
-private keys in the browser; live Hedera stays env-gated (see `docs/going-to-testnet.md`).
+private keys in the browser; live Hedera stays CLI-gated (see `docs/going-to-testnet.md`).
+
+**Canonical linked Hashinal (testnet):** NFT `0.0.11146645` → `hcs://1/0.0.11144977`
+(HashScan + `/verify` → Load canonical HRL). Prefer `mint:live -- --live --hrl …` over
+topic-as-HRL. Public CI: `.github/workflows/ci.yml` on `main` (test · lint · build · demo).
+Read-only re-proof: `npm run verify:testnet`.
 
 ## Layout
 
@@ -69,8 +74,8 @@ before workspace-scoped tests.
 
 ## Conventions
 
-- Deterministic core: same claim in → same receipt out. Hedera I/O is stubbed / env-gated;
-  unit tests never hit the network.
+- Deterministic core: same claim in → same receipt out. Hedera I/O is offline-first /
+  CLI-gated (unit tests never hit the network; linked Hashinal smoke already on testnet).
 - Receipts: `taskHash = sha256(canonicalize(claim))`;
   `decisionHash = sha256(canonicalize({ v, taskHash, verdict, checks }))`.
 - Never commit secrets. Only `.env.example` ships.

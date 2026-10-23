@@ -318,6 +318,27 @@ export function MintPad() {
           Vera Labs’ Hashinal authenticity + mint pad. Offline-first; not a SentX competitor.
           New here? Start with Getting started — then come back to export a drop.
         </p>
+        <p className="muted">
+          Linked Hashinal on testnet:{' '}
+          <a
+            href="https://hashscan.io/testnet/token/0.0.11146645"
+            target="_blank"
+            rel="noreferrer"
+          >
+            NFT 0.0.11146645
+          </a>{' '}
+          →{' '}
+          <a
+            href="https://hashscan.io/testnet/topic/0.0.11144977"
+            target="_blank"
+            rel="noreferrer"
+          >
+            hcs://1/0.0.11144977
+          </a>
+          . On{' '}
+          <a href="/verify">/verify</a>, use <strong>Load canonical HRL</strong>. Offline Tinies /
+          Nodlings / Demo presets below are unchanged.
+        </p>
         <p className="hero-ctas">
           <a className="btn" href="/start">
             Getting started

@@ -22,7 +22,7 @@
         {
           "steps": [
             {
-              "text": "Nodeling prepares Hashinal NFT collections with authenticity receipts and multi-collection allowlists. No Hedera account is needed for the offline demo. How others use it: docs/for-others.md (creator \u00b7 collector \u00b7 builder) and UI /start. List minted Hashinals on SentX DreamForge / HashPack \u2014 this is not a marketplace competitor."
+              "text": "Nodeling prepares Hashinal NFT collections with authenticity receipts and multi-collection allowlists. Offline-first demo needs no Hedera account; linked Hashinal smoke is already on testnet (NFT 0.0.11146645 \u2192 hcs://1/0.0.11144977). How others use it: docs/for-others.md and UI /start. Public CI on main. List on SentX DreamForge / HashPack \u2014 not a marketplace competitor."
             }
           ]
         },
@@ -43,7 +43,7 @@
             },
             {
               "label": "Verify a package",
-              "text": "Paste *-nodeling-receipts.json (or a fixture receipt) on /verify. GREEN = clean; RED = tamper / bad edition / forged allowlist."
+              "text": "Paste *-nodeling-receipts.json on /verify, or use Load canonical HRL (testnet NFT 0.0.11146645 \u2192 hcs://1/0.0.11144977). GREEN = clean; RED = tamper / bad edition / forged allowlist."
             },
             {
               "label": "Copy the env file (optional; live testnet CLI only)",
@@ -54,6 +54,6 @@
       ]
     }
   },
-  "description": "Nodeling \u2014 Vera Labs' Hashinal authenticity + NFT mint pad (HCS-5 NFTs with HCS-1 media via hcs://1/<topic> HRLs). Offline collection prep, authenticity receipts, multi-collection allowlists; SentX DreamForge / HashPack list-compatible. Start: docs/for-others.md \u00b7 npm run demo \u00b7 UI /start. Phase 2: music drops.",
+  "description": "Nodeling \u2014 Vera Labs' Hashinal authenticity + NFT mint pad (HCS-5 NFTs with HCS-1 media via hcs://1/<topic> HRLs). Offline-first prep + authenticity receipts; linked testnet demo NFT 0.0.11146645 \u2192 hcs://1/0.0.11144977. Start: docs/for-others.md \u00b7 npm run demo \u00b7 UI /start. Public CI on main. Phase 2: music drops.",
   "name": "nodeling"
 }

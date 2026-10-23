@@ -5,7 +5,7 @@ import { Nav } from '@/components/Nav';
 export const metadata: Metadata = {
   title: 'Nodeling — Hashinal authenticity + NFT mint pad',
   description:
-    "Vera Labs' Nodeling: prepare Hashinal collections, authenticity receipts, and allowlists offline. List on SentX / HashPack.",
+    "Vera Labs' Nodeling: offline-first Hashinal prep + authenticity receipts; linked testnet demo on /verify. List on SentX / HashPack.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
