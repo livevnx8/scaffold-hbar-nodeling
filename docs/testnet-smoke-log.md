@@ -20,9 +20,11 @@ Public ids only — no keys.
 
 ## Notes
 
-- Full HCS-1 file inscription remains stubbed; this smoke uses **topic-as-HRL** (`hcs://1/<topicId>`).
-- NFT metadata bytes = UTF-8 encoding of that HRL string (Hashinal pattern). Mirror confirmed serial 1 metadata.
+- This smoke uses **topic-as-HRL** (`hcs://1/0.0.11144786`) - the topic has **no file chunks**. HOL file inscription is a separate proof: topic [`0.0.11144977`](https://hashscan.io/testnet/topic/0.0.11144977) ([testnet-hcs1-inscribe-log.md](./testnet-hcs1-inscribe-log.md)).
+- To mint an NFT whose metadata points at the file topic: fund >= ~15 HBAR, then `npm run mint:live -- --live --hrl hcs://1/0.0.11144977`.
+- NFT metadata bytes = UTF-8 encoding of the HRL string (Hashinal pattern). Mirror confirmed serial 1 metadata.
 - No custom royalty fees (lean smoke). TokenCreate is still ~$1 USD (~12.6 HBAR at Oct 23 2026 testnet FX).
-- Gated: `npm run mint:live -- --live` + `HEDERA_NETWORK=testnet` + operator env.
+- Gated: `npm run mint:live -- --live` (+ optional `--hrl`) + `HEDERA_NETWORK=testnet` + operator env.
+- Read-only re-proof: `npm run verify:testnet`.
 - Result JSON (gitignored): `packages/core/tmp/testnet-smoke-result.json`
 - Earlier TopicCreate-only topics from fee-cap retries: `0.0.11144764`, `0.0.11144766`, `0.0.11144770` (unused by final mint).

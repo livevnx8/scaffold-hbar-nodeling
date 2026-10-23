@@ -112,15 +112,17 @@ export function describeNodelingUtilize(): NodelingUtilizeDescription {
     ],
     stubbedVsLive: {
       stubbed: [
-        'Live HCS-1 inscription',
-        'TokenCreate / TokenMint on Hedera',
-        'AuthenticityRegistry deploy / anchor',
+        'Browser UI mint/inscribe/anchor (CLI only for live chain)',
+        'Offline planHashinalMint / dryRunToken* (always dry-run)',
         'SentX write APIs (never called)',
         'Browser private keys (never)',
+        'Mainnet (refused by live CLIs)',
       ],
       liveLater: [
-        'Env-gated testnet inscription + mint (docs/going-to-testnet.md)',
-        'Optional registry anchor for decisionHash',
+        'npm run inscribe:live -- --live (HOL HCS-1 file bytes)',
+        'npm run mint:live -- --live [--hrl hcs://1/<topic>]',
+        'npm run anchor:live -- --live (AuthenticityRegistry)',
+        'npm run verify:testnet (read-only re-proof)',
         'Manual list on SentX DreamForge / HashPack (operator upload)',
       ],
     },

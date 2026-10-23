@@ -33,7 +33,9 @@
     "mint:plan": "tsx scripts/mint-plan.ts",
     "drop:build:all": "COLLECTION=all tsx scripts/build-drop.ts",
     "mint:live": "tsx scripts/mint-live.ts",
-    "inscribe:live": "tsx scripts/inscribe-live.ts"
+    "inscribe:live": "tsx scripts/inscribe-live.ts",
+    "verify:testnet": "tsx scripts/verify-testnet.ts",
+    "anchor:live": "tsx scripts/anchor-live.ts"
   },
   "engines": {
     "node": ">=20.18.3"

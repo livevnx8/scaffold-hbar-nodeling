@@ -44,9 +44,9 @@ npm run lint
 Plus a multi-collection allowlist snapshot (wolves + tinies fixtures) with sha256
 integrity and membership checks. Offline `planHashinalMint` stays dry-run
 (`dryRun: true` / `liveInscription: 'stubbed'`). **Gated live smoke:**
-`npm run mint:live -- --live` (testnet + operator env only) — see
+`npm run mint:live -- --live` (testnet + operator env only; optional `--hrl`) — see
 [docs/going-to-testnet.md](./docs/going-to-testnet.md) and
-[docs/testnet-smoke-log.md](./docs/testnet-smoke-log.md). HCS-1 *file* inscription: `npm run inscribe:live -- --live` (HOL zstd/base64 chunks). `mint:live` still uses topic-as-HRL only.
+[docs/testnet-smoke-log.md](./docs/testnet-smoke-log.md). HCS-1 *file* inscription: `npm run inscribe:live -- --live` (HOL zstd/base64 chunks). Registry: `npm run anchor:live -- --live`. Read-only re-proof: `npm run verify:testnet`. Default `mint:live` is topic-as-HRL; pass `--hrl` to link an inscription.
 
 ## Prep → validate → authenticity sidecar → list on SentX
 

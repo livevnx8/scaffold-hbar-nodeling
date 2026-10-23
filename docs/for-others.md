@@ -90,13 +90,15 @@ npm run dev --workspace=@nodeling/nextjs
 
 ### Stubbed vs live
 
-| Stubbed today | Live later (opt-in) |
-|---------------|---------------------|
-| HCS-1 inscription | Env-gated testnet inscription |
-| TokenCreate / TokenMint | `npm run mint:live -- --live` + keys ([going-to-testnet.md](./going-to-testnet.md), [testnet-smoke-log.md](./testnet-smoke-log.md)) |
-| Registry deploy / anchor | Optional `decisionHash` write |
+| Offline / never from UI | Live (CLI, opt-in `--live`) |
+|-------------------------|------------------------------|
+| `planHashinalMint` / dry-run helpers | `npm run inscribe:live -- --live` — HOL HCS-1 ([testnet-hcs1-inscribe-log.md](./testnet-hcs1-inscribe-log.md)) |
+| Browser signing | `npm run mint:live -- --live` (+ optional `--hrl`) ([testnet-smoke-log.md](./testnet-smoke-log.md)) |
+| — | `npm run anchor:live -- --live` — AuthenticityRegistry |
+| — | `npm run verify:testnet` — read-only re-proof |
 | SentX writes | **Never** from this template — operator uploads manually |
 | Browser private keys | **Never** |
+| Mainnet | **Refused** by live CLIs |
 
 Scaffold-HBAR fork shape: see root [AGENTS.md](../AGENTS.md) and [README.md](../README.md).
 

@@ -11,7 +11,7 @@ How others use it (creator · collector · builder): [for-others.md](./for-other
 2. Create an HCS-5 NFT whose metadata is the HRL `hcs://1/<topicId>`.
 3. Anyone can resolve the HRL to the inscribed content.
 
-This template **stubs** live inscription and TokenCreate/TokenMint. Offline, it still
+This template **defaults to offline dry-run** for inscription and TokenCreate/TokenMint. Live submit is CLI-gated (`inscribe:live` / `mint:live` / `anchor:live`). Offline, it still
 builds the metadata shape, HRL placeholder, content hash, and authenticity receipt.
 
 ## Authenticity receipt

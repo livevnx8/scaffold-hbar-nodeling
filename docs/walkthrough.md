@@ -17,7 +17,7 @@ Audience-first paths (creator · collector · builder): [for-others.md](./for-ot
    folder + zip; authenticity / hash sidecars sit **beside** the folder (never inside).
 4. **Verify** — `verifyDropPackage` offline, or paste `*-nodeling-receipts.json` on `/verify`.
 5. **List on SentX** — upload only the drop folder/zip in DreamForge / HashPack. Nodeling
-   never writes to SentX or signs Hedera txs. Live HCS-1 / TokenCreate / TokenMint stay stubbed.
+   never writes to SentX or signs Hedera txs from the UI. Live HCS-1 / TokenCreate / TokenMint / registry anchor are **CLI-gated** (`--live` + testnet env) — see [going-to-testnet.md](./going-to-testnet.md).
 
 ```bash
 npm install && npm run build

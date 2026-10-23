@@ -50,7 +50,14 @@ What it does (lean, **no custom royalty fees**):
 2. `TokenCreateTransaction` NFT FINITE (default maxSupply=1), treasury+supplyKey=operator
 3. `TokenMintTransaction` with metadata = UTF-8 bytes of that HRL
 
-`mint:live` still uses topic-as-HRL only (no file bytes). For real file bytes use `inscribe:live`.
+By default `mint:live` uses topic-as-HRL (no file bytes). For real file bytes:
+
+```bash
+npm run inscribe:live -- --live
+npm run mint:live -- --live --hrl hcs://1/<topicFromInscribe>
+```
+
+(TokenCreate still costs ~12+ HBAR - fund the operator first.)
 
 Outputs (public ids only):
 
@@ -82,6 +89,24 @@ Same gates as `mint:live` (`--live` + `HEDERA_NETWORK=testnet` + operator env).
 Public log: [testnet-hcs1-inscribe-log.md](./testnet-hcs1-inscribe-log.md).
 Does **not** create a new NFT (TokenCreate ~$1 / 12+ HBAR).
 
+## Read-only re-verify
+
+```bash
+npm run verify:testnet
+```
+
+Re-checks smoke topic/token/NFT metadata, HOL HCS-1 decode (zstd), and AuthenticityRegistry bytecode/operator. No keys, no txs. See [testnet-e2e-checklist.md](./testnet-e2e-checklist.md).
+
+## Registry anchor (`anchor:live`)
+
+After registry deploy:
+
+```bash
+npm run anchor:live -- --live
+```
+
+Writes `AuthenticityRegistry.anchorReceipt(claimId, decisionHash)` then `verifyReceipt` - cheap vs TokenCreate.
+
 ## Deploy registry (optional)
 
 After a successful smoke, if balance allows:
@@ -96,11 +121,14 @@ Hardhat reads `packages/nextjs/.env` (`HEDERA_OPERATOR_KEY` should be `0x`-prefi
 
 | Step | Status |
 |------|--------|
-| Live HCS-1 **file** inscription (HOL) | **Live** via `npm run inscribe:live -- --live` (see [testnet-hcs1-inscribe-log.md](./testnet-hcs1-inscribe-log.md)); offline `planHcs1Inscription` still stubbed |
-| Offline `planHashinalMint` / `dryRunToken*` | Always `dryRun: true` / `liveSubmission: 'stubbed'` |
-| SentX write APIs | Out of scope — list manually on DreamForge after mint |
+| Offline `planHcs1Inscription` / `planHashinalMint` / `dryRunToken*` | Always `dryRun: true` / `liveSubmission: 'stubbed'` (by design) |
+| Live HCS-1 **file** inscription (HOL) | **Live** - `npm run inscribe:live -- --live` |
+| Live TokenCreate/Mint | **Live** - `npm run mint:live -- --live` (+ optional `--hrl`) |
+| Registry anchor | **Live** - `npm run anchor:live -- --live` |
+| Linked Hashinal (NFT metadata to file topic) | Needs >= ~15 HBAR for TokenCreate with `--hrl` after `inscribe:live` |
+| SentX write APIs | Out of scope - list manually on DreamForge after mint |
 | Music drops | Phase 2 |
-| Mainnet | Refused by `mint:live` |
+| Mainnet | Refused by live CLIs |
 
 ## Safety
 

@@ -1,6 +1,6 @@
 {
   "name": "scaffold-hbar-nodeling",
-  "description": "Scaffold-HBAR template: Nodeling — Vera Labs' Hashinal authenticity + NFT mint pad (offline-first). NFT-first; Phase 2: music drops.",
+  "description": "Scaffold-HBAR template: Nodeling \u2014 Vera Labs' Hashinal authenticity + NFT mint pad (offline-first). NFT-first; Phase 2: music drops.",
   "packageManager": "npm@10.9.4",
   "private": true,
   "scripts": {
@@ -16,7 +16,9 @@
     "drop:build:all": "COLLECTION=all npm run drop:build --workspace=@nodeling/core",
     "drop:build:demo": "COLLECTION=demo npm run drop:build --workspace=@nodeling/core",
     "mint:live": "npm run mint:live --workspace=@nodeling/core --",
-    "inscribe:live": "npm run inscribe:live --workspace=@nodeling/core --"
+    "inscribe:live": "npm run inscribe:live --workspace=@nodeling/core --",
+    "verify:testnet": "npm run verify:testnet --workspace=@nodeling/core --",
+    "anchor:live": "npm run anchor:live --workspace=@nodeling/core --"
   },
   "version": "0.1.0",
   "workspaces": [

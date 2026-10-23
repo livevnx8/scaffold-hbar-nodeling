@@ -609,7 +609,7 @@ export function MintPad() {
 
         <h3 style={{ marginTop: '1rem', fontSize: '0.95rem' }}>Mint plan (dry-run)</h3>
         <p className="muted">
-          Ordered Hashinal plan: stub HCS-1 → TokenCreate (FINITE) → TokenMint with metadata =
+          Ordered Hashinal plan (dry-run): HCS-1 → TokenCreate (FINITE) → TokenMint with metadata =
           UTF-8 HRL. Never signs or submits.
         </p>
         <button
@@ -756,7 +756,7 @@ export function MintPad() {
         )}
         <p className="muted" style={{ marginTop: '0.5rem' }}>
           Export uses the collection config above (tiers → editions). Sidecars stay beside the
-          DreamForge folder. Live mint stays stubbed.
+          DreamForge folder. Live mint/inscribe/anchor are CLI-gated (`mint:live` / `inscribe:live` / `anchor:live`).
         </p>
       </div>
 

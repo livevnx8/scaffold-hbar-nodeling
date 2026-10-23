@@ -7,9 +7,13 @@
  *   - HEDERA_OPERATOR_ID + HEDERA_OPERATOR_KEY are set
  *
  * Never invoked by `npm run demo`, unit tests, or `mint:plan`.
- * Full HCS-1 file inscription stays stubbed — this smoke uses topic-as-HRL target.
+ * By default creates an empty topic and uses it as the HRL target (topic-as-HRL).
+ * Pass `--hrl hcs://1/<topicId>` to mint against an existing inscription (e.g. from
+ * `inscribe:live`) and skip TopicCreate.
  *
- * Usage: npm run mint:live -- --live
+ * Usage:
+ *   npm run mint:live -- --live
+ *   npm run mint:live -- --live --hrl hcs://1/0.0.11144977
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
@@ -67,6 +71,21 @@ function loadDotEnv(path: string): void {
 function refuse(msg: string, code = 2): never {
   console.error(`REFUSED: ${msg}`);
   process.exit(code);
+}
+
+function argValue(argv: string[], flag: string): string | undefined {
+  const i = argv.indexOf(flag);
+  if (i < 0) return undefined;
+  return argv[i + 1];
+}
+
+function parseExistingHrl(argv: string[]): string | undefined {
+  const raw = argValue(argv, '--hrl');
+  if (!raw) return undefined;
+  if (!/^hcs:\/\/1\/0\.0\.\d+$/.test(raw)) {
+    refuse(`--hrl must look like hcs://1/0.0.N (got ${raw})`);
+  }
+  return raw;
 }
 
 function assertLiveGate(argv: string[]): void {
@@ -142,15 +161,21 @@ function txLink(txId: string): string {
 
 async function main(): Promise<void> {
   loadDotEnv(NEXTJS_ENV);
-  assertLiveGate(process.argv.slice(2));
+  const argv = process.argv.slice(2);
+  assertLiveGate(argv);
+  const existingHrl = parseExistingHrl(argv);
   const { operatorId, operatorKeyRaw } = assertEnv();
 
   console.log('Nodeling — gated Hedera TESTNET smoke');
   console.log(`Operator: ${operatorId}`);
   console.log('Network:  testnet');
-  console.log(
-    'Note: full HCS-1 file inscription stubbed; TopicCreate topic becomes HRL target.\n',
-  );
+  if (existingHrl) {
+    console.log(`Using existing HRL (skip TopicCreate): ${existingHrl}\n`);
+  } else {
+    console.log(
+      'Note: TopicCreate → topic-as-HRL. For file bytes first run inscribe:live, then mint:live --hrl hcs://1/<topic>.\n',
+    );
+  }
 
   const bal0 = await mirrorBalanceHbar(operatorId);
   console.log(`Starting balance: ${bal0.toFixed(4)} HBAR`);
@@ -178,28 +203,38 @@ async function main(): Promise<void> {
   };
 
   try {
-    // a) TopicCreate → HRL
-    console.log('1) TopicCreateTransaction…');
-    const topicTx = await new TopicCreateTransaction()
-      .setTopicMemo('Nodeling smoke HRL target (HCS-1 file inscription stubbed)')
-      .setMaxTransactionFee(new Hbar(2))
-      .freezeWith(client)
-      .sign(privateKey);
-    const topicResp = await topicTx.execute(client);
-    const topicRx = await topicResp.getReceipt(client);
-    const topicRec = await topicResp.getRecord(client);
-    if (topicRx.status !== Status.Success || !topicRx.topicId) {
-      throw new Error(`TopicCreate status ${topicRx.status.toString()}`);
+    // a) HRL — existing or TopicCreate
+    let topicId: string;
+    let hrl: string;
+    let topicTxId = '';
+    let topicFee = 0;
+    if (existingHrl) {
+      hrl = existingHrl;
+      topicId = existingHrl.slice('hcs://1/'.length);
+      console.log(`1) Skip TopicCreate — using ${hrl}`);
+    } else {
+      console.log('1) TopicCreateTransaction…');
+      const topicTx = await new TopicCreateTransaction()
+        .setTopicMemo('Nodeling smoke HRL target (use inscribe:live for file bytes)')
+        .setMaxTransactionFee(new Hbar(2))
+        .freezeWith(client)
+        .sign(privateKey);
+      const topicResp = await topicTx.execute(client);
+      const topicRx = await topicResp.getReceipt(client);
+      const topicRec = await topicResp.getRecord(client);
+      if (topicRx.status !== Status.Success || !topicRx.topicId) {
+        throw new Error(`TopicCreate status ${topicRx.status.toString()}`);
+      }
+      topicId = topicRx.topicId.toString();
+      topicTxId = topicResp.transactionId.toString();
+      topicFee = feeHbarFromRecord(topicRec);
+      guardSpend('TopicCreate', topicFee);
+      fees[fees.length - 1].txId = topicTxId;
+      hrl = `hcs://1/${topicId}`;
+      console.log(`   topicId=${topicId}`);
+      console.log(`   hrl=${hrl}`);
+      console.log(`   tx=${topicTxId} fee=${topicFee.toFixed(6)} HBAR`);
     }
-    const topicId = topicRx.topicId.toString();
-    const topicTxId = topicResp.transactionId.toString();
-    const topicFee = feeHbarFromRecord(topicRec);
-    guardSpend('TopicCreate', topicFee);
-    fees[fees.length - 1].txId = topicTxId;
-    const hrl = `hcs://1/${topicId}`;
-    console.log(`   topicId=${topicId}`);
-    console.log(`   hrl=${hrl}`);
-    console.log(`   tx=${topicTxId} fee=${topicFee.toFixed(6)} HBAR`);
 
     // b) TokenCreate NON_FUNGIBLE_UNIQUE FINITE (no custom fees)
     console.log('2) TokenCreateTransaction (NFT, no custom fees)…');
@@ -276,7 +311,9 @@ async function main(): Promise<void> {
       network: 'testnet',
       operatorId,
       timestamp: new Date().toISOString(),
-      note: 'Full HCS-1 file inscription stubbed; topicId used as Hashinal HRL target.',
+      note: existingHrl
+        ? 'Minted against existing HRL (TopicCreate skipped).'
+        : 'Topic-as-HRL smoke; for file bytes use inscribe:live then mint:live --hrl.',
       topicId,
       hrl,
       tokenId,
@@ -294,7 +331,7 @@ async function main(): Promise<void> {
       links: {
         topic: `${HASHSCAN}/topic/${topicId}`,
         token: `${HASHSCAN}/token/${tokenId}`,
-        topicTx: txLink(topicTxId),
+        topicTx: topicTxId ? txLink(topicTxId) : null,
         tokenTx: txLink(tokenTxId),
         mintTx: txLink(mintTxId),
         account: `${HASHSCAN}/account/${operatorId}`,
@@ -319,21 +356,24 @@ Public ids only — no keys.
 | HRL | \`${hrl}\` |
 | Token | [\`${tokenId}\`](${result.links.token}) (\`${TOKEN_NAME}\` / \`${TOKEN_SYMBOL}\`, maxSupply=${MAX_SUPPLY}) |
 | Serials | ${serials.join(', ') || '(none)'} |
-| Topic tx | [${topicTxId}](${result.links.topicTx}) |
+| Topic tx | ${topicTxId ? `[${topicTxId}](${result.links.topicTx})` : '_(skipped -- existing --hrl)_'} |
 | TokenCreate tx | [${tokenTxId}](${result.links.tokenTx}) |
 | TokenMint tx | [${mintTxId}](${result.links.mintTx}) |
-| Fees (approx) | TopicCreate ${topicFee.toFixed(6)} + TokenCreate ${tokenFee.toFixed(6)} + TokenMint ${mintFee.toFixed(6)} ≈ **${totalFee.toFixed(4)} HBAR** |
+| Fees (approx) | ${existingHrl ? '' : `TopicCreate ${topicFee.toFixed(6)} + `}TokenCreate ${tokenFee.toFixed(6)} + TokenMint ${mintFee.toFixed(6)} ≈ **${totalFee.toFixed(4)} HBAR** |
 | Balance | ${bal0.toFixed(4)} → ${balFinal.toFixed(4)} HBAR |
 | Registry deploy | ${registryNote} |
 
 ## Notes
 
-- Full HCS-1 file inscription remains stubbed; this smoke uses **topic-as-HRL** (\`hcs://1/<topicId>\`).
+- ${existingHrl
+  ? 'Minted with existing HRL `' + hrl + '` (TopicCreate skipped). Pair with [testnet-hcs1-inscribe-log.md](./testnet-hcs1-inscribe-log.md) for file bytes.'
+  : 'Topic-as-HRL smoke (empty topic). For HOL file bytes: `inscribe:live`, then `mint:live -- --live --hrl hcs://1/<topic>`.'}
 - NFT metadata bytes = UTF-8 encoding of that HRL string (Hashinal pattern).
 - No custom royalty fees (lean smoke).
-- Gated: \`npm run mint:live -- --live\` + \`HEDERA_NETWORK=testnet\` + operator env.
+- Gated: \`npm run mint:live -- --live\` (+ optional \`--hrl\`) + \`HEDERA_NETWORK=testnet\` + operator env.
 - Result JSON (gitignored): \`packages/core/tmp/testnet-smoke-result.json\`
 `;
+
     writeFileSync(DOCS_LOG, logMd, 'utf8');
 
     console.log('\n=== SUCCESS ===');
