@@ -1,0 +1,266 @@
+[
+ {
+  "edition": 1,
+  "name": "Nodeling Demo #1",
+  "creator": "Vera Labs",
+  "description": "Nodeling demo Hashinal-ready NFT #1 (Common). Prep here → list on SentX DreamForge.",
+  "image": "1.png",
+  "type": "image/png",
+  "format": "HIP412@2.0.0",
+  "attributes": [
+   {
+    "trait_type": "Rarity",
+    "value": "Common"
+   },
+   {
+    "trait_type": "Artist",
+    "value": "Vera Labs"
+   },
+   {
+    "trait_type": "Protocol",
+    "value": "Hashinal"
+   },
+   {
+    "trait_type": "Series",
+    "value": "Demo"
+   }
+  ],
+  "properties": {
+   "compiler": "Nodeling",
+   "contentHash": "a300df1245aebf93af5cb1cd09d6b64bcf7efbb0b806c2eddc1cd1d91cbe1021",
+   "hrl": "hcs://1/0.0.900001"
+  },
+  "hrl": "hcs://1/0.0.900001"
+ },
+ {
+  "edition": 2,
+  "name": "Nodeling Demo #2",
+  "creator": "Vera Labs",
+  "description": "Nodeling demo Hashinal-ready NFT #2 (Common). Prep here → list on SentX DreamForge.",
+  "image": "2.png",
+  "type": "image/png",
+  "format": "HIP412@2.0.0",
+  "attributes": [
+   {
+    "trait_type": "Rarity",
+    "value": "Common"
+   },
+   {
+    "trait_type": "Artist",
+    "value": "Vera Labs"
+   },
+   {
+    "trait_type": "Protocol",
+    "value": "Hashinal"
+   },
+   {
+    "trait_type": "Series",
+    "value": "Demo"
+   }
+  ],
+  "properties": {
+   "compiler": "Nodeling",
+   "contentHash": "2a7e724e3ccb57e83889002d32166349c91b6b47e19a3c48163e248d5ea53f1d",
+   "hrl": "hcs://1/0.0.900001"
+  },
+  "hrl": "hcs://1/0.0.900001"
+ },
+ {
+  "edition": 3,
+  "name": "Nodeling Demo #3",
+  "creator": "Vera Labs",
+  "description": "Nodeling demo Hashinal-ready NFT #3 (Common). Prep here → list on SentX DreamForge.",
+  "image": "3.png",
+  "type": "image/png",
+  "format": "HIP412@2.0.0",
+  "attributes": [
+   {
+    "trait_type": "Rarity",
+    "value": "Common"
+   },
+   {
+    "trait_type": "Artist",
+    "value": "Vera Labs"
+   },
+   {
+    "trait_type": "Protocol",
+    "value": "Hashinal"
+   },
+   {
+    "trait_type": "Series",
+    "value": "Demo"
+   }
+  ],
+  "properties": {
+   "compiler": "Nodeling",
+   "contentHash": "6c63fbe0931be90d9aa027dd6c4c604fa07f11f6f2c8eee9b74d439b150addd8",
+   "hrl": "hcs://1/0.0.900001"
+  },
+  "hrl": "hcs://1/0.0.900001"
+ },
+ {
+  "edition": 4,
+  "name": "Nodeling Demo #4",
+  "creator": "Vera Labs",
+  "description": "Nodeling demo Hashinal-ready NFT #4 (Common). Prep here → list on SentX DreamForge.",
+  "image": "4.png",
+  "type": "image/png",
+  "format": "HIP412@2.0.0",
+  "attributes": [
+   {
+    "trait_type": "Rarity",
+    "value": "Common"
+   },
+   {
+    "trait_type": "Artist",
+    "value": "Vera Labs"
+   },
+   {
+    "trait_type": "Protocol",
+    "value": "Hashinal"
+   },
+   {
+    "trait_type": "Series",
+    "value": "Demo"
+   }
+  ],
+  "properties": {
+   "compiler": "Nodeling",
+   "contentHash": "e32d07beb0124ff555f96c613b70d3fb78458e450e2caa2662b8f3f9d32637df",
+   "hrl": "hcs://1/0.0.900001"
+  },
+  "hrl": "hcs://1/0.0.900001"
+ },
+ {
+  "edition": 5,
+  "name": "Nodeling Demo #5",
+  "creator": "Vera Labs",
+  "description": "Nodeling demo Hashinal-ready NFT #5 (Common). Prep here → list on SentX DreamForge.",
+  "image": "5.png",
+  "type": "image/png",
+  "format": "HIP412@2.0.0",
+  "attributes": [
+   {
+    "trait_type": "Rarity",
+    "value": "Common"
+   },
+   {
+    "trait_type": "Artist",
+    "value": "Vera Labs"
+   },
+   {
+    "trait_type": "Protocol",
+    "value": "Hashinal"
+   },
+   {
+    "trait_type": "Series",
+    "value": "Demo"
+   }
+  ],
+  "properties": {
+   "compiler": "Nodeling",
+   "contentHash": "9ec01154c87eaebf47c1c12a3fc66d7c271b7c6d07630d7667ce340d88959fe5",
+   "hrl": "hcs://1/0.0.900001"
+  },
+  "hrl": "hcs://1/0.0.900001"
+ },
+ {
+  "edition": 6,
+  "name": "Nodeling Demo #6",
+  "creator": "Vera Labs",
+  "description": "Nodeling demo Hashinal-ready NFT #6 (Rare). Prep here → list on SentX DreamForge.",
+  "image": "6.png",
+  "type": "image/png",
+  "format": "HIP412@2.0.0",
+  "attributes": [
+   {
+    "trait_type": "Rarity",
+    "value": "Rare"
+   },
+   {
+    "trait_type": "Artist",
+    "value": "Vera Labs"
+   },
+   {
+    "trait_type": "Protocol",
+    "value": "Hashinal"
+   },
+   {
+    "trait_type": "Series",
+    "value": "Demo"
+   }
+  ],
+  "properties": {
+   "compiler": "Nodeling",
+   "contentHash": "517fa0460bbb0a790c37cac203121ca1ce033e1ee5adcb4e830139a07aadc7c0",
+   "hrl": "hcs://1/0.0.900001"
+  },
+  "hrl": "hcs://1/0.0.900001"
+ },
+ {
+  "edition": 7,
+  "name": "Nodeling Demo #7",
+  "creator": "Vera Labs",
+  "description": "Nodeling demo Hashinal-ready NFT #7 (Rare). Prep here → list on SentX DreamForge.",
+  "image": "7.png",
+  "type": "image/png",
+  "format": "HIP412@2.0.0",
+  "attributes": [
+   {
+    "trait_type": "Rarity",
+    "value": "Rare"
+   },
+   {
+    "trait_type": "Artist",
+    "value": "Vera Labs"
+   },
+   {
+    "trait_type": "Protocol",
+    "value": "Hashinal"
+   },
+   {
+    "trait_type": "Series",
+    "value": "Demo"
+   }
+  ],
+  "properties": {
+   "compiler": "Nodeling",
+   "contentHash": "ed7ff97d675d7ab5afb5c36f348b653d31949b4dad8a251ebe96648790eb3c43",
+   "hrl": "hcs://1/0.0.900001"
+  },
+  "hrl": "hcs://1/0.0.900001"
+ },
+ {
+  "edition": 8,
+  "name": "Nodeling Demo #8",
+  "creator": "Vera Labs",
+  "description": "Nodeling demo Hashinal-ready NFT #8 (Legendary). Prep here → list on SentX DreamForge.",
+  "image": "8.png",
+  "type": "image/png",
+  "format": "HIP412@2.0.0",
+  "attributes": [
+   {
+    "trait_type": "Rarity",
+    "value": "Legendary"
+   },
+   {
+    "trait_type": "Artist",
+    "value": "Vera Labs"
+   },
+   {
+    "trait_type": "Protocol",
+    "value": "Hashinal"
+   },
+   {
+    "trait_type": "Series",
+    "value": "Demo"
+   }
+  ],
+  "properties": {
+   "compiler": "Nodeling",
+   "contentHash": "1c7c3b60d344a01a4775ffb5f2d4d5cb96e82a0f95c6becb8f0c60a29b06db4d",
+   "hrl": "hcs://1/0.0.900001"
+  },
+  "hrl": "hcs://1/0.0.900001"
+ }
+]

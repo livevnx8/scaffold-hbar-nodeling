@@ -1,0 +1,64 @@
+{
+  "compiler": "Nodeling",
+  "hrl": "hcs://1/0.0.900020",
+  "files": {
+    "1.png": "9ee0197cc28a7787d356cf1a8ff93d67e7a2ca445e333d3ae7bf2990cdd348ca",
+    "2.png": "0eaebca64483b125f63e88c0660aa4b82b747b6dd22d5485b37621d81d0b9e5e",
+    "3.png": "c42f1485593e1bb7d226dbf50175d6f68340186536ee1ef879b0689e5de1c1ef",
+    "4.png": "93127fff5891324f826c217cb3c8218b23a1d1d5e8c421d9ee84ec725e84744d",
+    "5.png": "a9d90a8fa75469d667f5aa0a9f58ab28680787ed60a6469c751527ec5d28ccca",
+    "6.png": "418d243bcccf09b282af0a27baed8b4d24e661a46540a70d2293a71e8dfccf7c",
+    "7.png": "16e127e38b9470ea8d0ffca41176aaca7b199294d33e585c565a33f88d8620fa",
+    "8.png": "69b83c046b59c55967c33243659cc728edc4b80566d4ef84ac23b31a8f1c986d"
+  },
+  "editions": [
+    {
+      "edition": 1,
+      "image": "1.png",
+      "contentHash": "9ee0197cc28a7787d356cf1a8ff93d67e7a2ca445e333d3ae7bf2990cdd348ca",
+      "hrl": "hcs://1/0.0.900020"
+    },
+    {
+      "edition": 2,
+      "image": "2.png",
+      "contentHash": "0eaebca64483b125f63e88c0660aa4b82b747b6dd22d5485b37621d81d0b9e5e",
+      "hrl": "hcs://1/0.0.900020"
+    },
+    {
+      "edition": 3,
+      "image": "3.png",
+      "contentHash": "c42f1485593e1bb7d226dbf50175d6f68340186536ee1ef879b0689e5de1c1ef",
+      "hrl": "hcs://1/0.0.900020"
+    },
+    {
+      "edition": 4,
+      "image": "4.png",
+      "contentHash": "93127fff5891324f826c217cb3c8218b23a1d1d5e8c421d9ee84ec725e84744d",
+      "hrl": "hcs://1/0.0.900020"
+    },
+    {
+      "edition": 5,
+      "image": "5.png",
+      "contentHash": "a9d90a8fa75469d667f5aa0a9f58ab28680787ed60a6469c751527ec5d28ccca",
+      "hrl": "hcs://1/0.0.900020"
+    },
+    {
+      "edition": 6,
+      "image": "6.png",
+      "contentHash": "418d243bcccf09b282af0a27baed8b4d24e661a46540a70d2293a71e8dfccf7c",
+      "hrl": "hcs://1/0.0.900020"
+    },
+    {
+      "edition": 7,
+      "image": "7.png",
+      "contentHash": "16e127e38b9470ea8d0ffca41176aaca7b199294d33e585c565a33f88d8620fa",
+      "hrl": "hcs://1/0.0.900020"
+    },
+    {
+      "edition": 8,
+      "image": "8.png",
+      "contentHash": "69b83c046b59c55967c33243659cc728edc4b80566d4ef84ac23b31a8f1c986d",
+      "hrl": "hcs://1/0.0.900020"
+    }
+  ]
+}

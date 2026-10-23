@@ -1,0 +1,51 @@
+{
+ "name": "43V3R 3dt.",
+ "creator": "LIVE",
+ "description": "Nano",
+ "image": "122.png",
+ "type": "image/png",
+ "format": "HIP412@2.0.0",
+ "properties": {
+  "compiler": "SentX",
+  "source": "Nodlings",
+  "nodling_id": 409
+ },
+ "attributes": [
+  {
+   "trait_type": "Background",
+   "value": "Coral"
+  },
+  {
+   "trait_type": "Hoodie Color",
+   "value": "Charcoal"
+  },
+  {
+   "trait_type": "Pattern",
+   "value": "None"
+  },
+  {
+   "trait_type": "Hood Top",
+   "value": "None"
+  },
+  {
+   "trait_type": "Screen Face",
+   "value": "Smirk"
+  },
+  {
+   "trait_type": "Glow",
+   "value": "Orange"
+  },
+  {
+   "trait_type": "Emblem",
+   "value": "None"
+  },
+  {
+   "trait_type": "Accessory",
+   "value": "Bandana"
+  },
+  {
+   "trait_type": "Rarity Tier",
+   "value": "Common"
+  }
+ ]
+}

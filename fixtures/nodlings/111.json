@@ -1,0 +1,51 @@
+{
+ "name": "43V3R 3dt.",
+ "creator": "LIVE",
+ "description": "Nano",
+ "image": "111.png",
+ "type": "image/png",
+ "format": "HIP412@2.0.0",
+ "properties": {
+  "compiler": "SentX",
+  "source": "Nodlings",
+  "nodling_id": 1833
+ },
+ "attributes": [
+  {
+   "trait_type": "Background",
+   "value": "Sky"
+  },
+  {
+   "trait_type": "Hoodie Color",
+   "value": "Tomato"
+  },
+  {
+   "trait_type": "Pattern",
+   "value": "None"
+  },
+  {
+   "trait_type": "Hood Top",
+   "value": "Cat Ears"
+  },
+  {
+   "trait_type": "Screen Face",
+   "value": "X Eyes"
+  },
+  {
+   "trait_type": "Glow",
+   "value": "Green"
+  },
+  {
+   "trait_type": "Emblem",
+   "value": "Hood Mesh"
+  },
+  {
+   "trait_type": "Accessory",
+   "value": "None"
+  },
+  {
+   "trait_type": "Rarity Tier",
+   "value": "Common"
+  }
+ ]
+}

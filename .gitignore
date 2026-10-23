@@ -1,0 +1,18 @@
+node_modules/
+dist/
+build/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+.env
+.env.local
+artifacts/
+cache/
+typechain-types/
+
+# Next.js generated
+packages/nextjs/next-env.d.ts
+
+# Live smoke artifacts (public ids only in docs/; never commit keys)
+packages/core/tmp/

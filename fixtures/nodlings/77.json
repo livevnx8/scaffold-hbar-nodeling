@@ -1,0 +1,51 @@
+{
+ "name": "43V3R 3dt.",
+ "creator": "LIVE",
+ "description": "Nano",
+ "image": "77.png",
+ "type": "image/png",
+ "format": "HIP412@2.0.0",
+ "properties": {
+  "compiler": "SentX",
+  "source": "Nodlings",
+  "nodling_id": 2061
+ },
+ "attributes": [
+  {
+   "trait_type": "Background",
+   "value": "Teal"
+  },
+  {
+   "trait_type": "Hoodie Color",
+   "value": "Cream"
+  },
+  {
+   "trait_type": "Pattern",
+   "value": "Stars"
+  },
+  {
+   "trait_type": "Hood Top",
+   "value": "Devil Horns"
+  },
+  {
+   "trait_type": "Screen Face",
+   "value": "Coin Eyes"
+  },
+  {
+   "trait_type": "Glow",
+   "value": "Cyan"
+  },
+  {
+   "trait_type": "Emblem",
+   "value": "None"
+  },
+  {
+   "trait_type": "Accessory",
+   "value": "Bandana"
+  },
+  {
+   "trait_type": "Rarity Tier",
+   "value": "Common"
+  }
+ ]
+}

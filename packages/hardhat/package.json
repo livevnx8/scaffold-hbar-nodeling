@@ -1,0 +1,38 @@
+{
+  "name": "@nodeling/hardhat",
+  "private": true,
+  "version": "0.1.0",
+  "description": "AuthenticityRegistry.sol \u2014 on-chain receipt + collection pointer anchor for Nodeling.",
+  "license": "MIT",
+  "scripts": {
+    "deploy:mainnet": "hardhat run scripts/deploy.ts --network hederaMainnet",
+    "deploy:testnet": "hardhat run scripts/deploy.ts --network hederaTestnet",
+    "test": "hardhat test",
+    "lint": "eslint scripts test hardhat.config.ts"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@nomicfoundation/hardhat-ignition-ethers": "^0.15.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^22.0.0",
+    "@typechain/ethers-v6": "^0.5.0",
+    "@typechain/hardhat": "^9.0.0",
+    "chai": "^4.4.0",
+    "dotenv": "^16.4.0",
+    "ethers": "^6.13.0",
+    "hardhat": "^2.22.0",
+    "hardhat-gas-reporter": "^1.0.0",
+    "solidity-coverage": "^0.8.0",
+    "ts-node": "^10.9.0",
+    "typechain": "^8.3.0",
+    "typescript": "^5.8.2"
+  },
+  "engines": {
+    "node": ">=20.18.3"
+  }
+}

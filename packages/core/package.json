@@ -1,0 +1,53 @@
+{
+  "name": "@nodeling/core",
+  "version": "0.1.0",
+  "description": "Pure TypeScript Nodeling core: HRL, metadata, authenticity receipts, allowlists, DreamForge drop build/validate, Hashinal TokenCreate/Mint dry-run payloads (offline).",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./drop": {
+      "types": "./dist/drop-node.d.ts",
+      "import": "./dist/drop-node.js",
+      "default": "./dist/drop-node.js"
+    },
+    "./hcs1-hol": {
+      "types": "./dist/hcs1-hol.d.ts",
+      "import": "./dist/hcs1-hol.js",
+      "default": "./dist/hcs1-hol.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "demo": "tsx scripts/demo.ts",
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src scripts tests",
+    "drop:build": "tsx scripts/build-drop.ts",
+    "mint:plan": "tsx scripts/mint-plan.ts",
+    "drop:build:all": "COLLECTION=all tsx scripts/build-drop.ts",
+    "mint:live": "tsx scripts/mint-live.ts",
+    "inscribe:live": "tsx scripts/inscribe-live.ts"
+  },
+  "engines": {
+    "node": ">=20.18.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.14",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.6",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@hashgraph/sdk": "^2.81.0",
+    "@mongodb-js/zstd": "^7.0.0"
+  }
+}

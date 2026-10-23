@@ -1,0 +1,9 @@
+{
+  "name": "Tiny #1",
+  "description": "Fixture Hashinal NFT for offline authenticity demo.",
+  "creator": "Vera Labs",
+  "type": "image",
+  "format": "image/png",
+  "edition": 1,
+  "maxEdition": 888
+}

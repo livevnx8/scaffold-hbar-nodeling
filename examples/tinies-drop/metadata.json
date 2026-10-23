@@ -1,0 +1,150 @@
+[
+ {
+  "edition": 1,
+  "name": "Tiny Beanie",
+  "creator": "Vera Labs",
+  "description": "Vera Labs Tiny — Beanie.",
+  "image": "1.png",
+  "type": "image/png",
+  "format": "HIP412@2.0.0",
+  "attributes": [
+   {
+    "trait_type": "Rarity",
+    "value": "Beanie"
+   },
+   {
+    "trait_type": "Artist",
+    "value": "Vera Labs"
+   },
+   {
+    "trait_type": "Protocol",
+    "value": "Hashinal"
+   },
+   {
+    "trait_type": "Series",
+    "value": "Tinies"
+   },
+   {
+    "trait_type": "Look",
+    "value": "Beanie"
+   }
+  ],
+  "properties": {
+   "compiler": "Nodeling",
+   "contentHash": "d8069272a88f9670f5bebace2c741dfb5278132f614af4af54aea7f185e0799b",
+   "hrl": "hcs://1/0.0.900010"
+  },
+  "hrl": "hcs://1/0.0.900010"
+ },
+ {
+  "edition": 2,
+  "name": "Tiny Shades",
+  "creator": "Vera Labs",
+  "description": "Vera Labs Tiny — Shades.",
+  "image": "2.png",
+  "type": "image/png",
+  "format": "HIP412@2.0.0",
+  "attributes": [
+   {
+    "trait_type": "Rarity",
+    "value": "Shades"
+   },
+   {
+    "trait_type": "Artist",
+    "value": "Vera Labs"
+   },
+   {
+    "trait_type": "Protocol",
+    "value": "Hashinal"
+   },
+   {
+    "trait_type": "Series",
+    "value": "Tinies"
+   },
+   {
+    "trait_type": "Look",
+    "value": "Shades"
+   }
+  ],
+  "properties": {
+   "compiler": "Nodeling",
+   "contentHash": "450adda4aa3c793f8ff7ab92e5e54c7402d87b99856750a127cd478c4ba33cac",
+   "hrl": "hcs://1/0.0.900010"
+  },
+  "hrl": "hcs://1/0.0.900010"
+ },
+ {
+  "edition": 3,
+  "name": "Tiny Astro",
+  "creator": "Vera Labs",
+  "description": "Vera Labs Tiny — Astro.",
+  "image": "3.png",
+  "type": "image/png",
+  "format": "HIP412@2.0.0",
+  "attributes": [
+   {
+    "trait_type": "Rarity",
+    "value": "Astro"
+   },
+   {
+    "trait_type": "Artist",
+    "value": "Vera Labs"
+   },
+   {
+    "trait_type": "Protocol",
+    "value": "Hashinal"
+   },
+   {
+    "trait_type": "Series",
+    "value": "Tinies"
+   },
+   {
+    "trait_type": "Look",
+    "value": "Astro"
+   }
+  ],
+  "properties": {
+   "compiler": "Nodeling",
+   "contentHash": "f05d2bbcb0f4ac5dfae8954e870b7ca1c998d8c8619245fa084ac10984f6d224",
+   "hrl": "hcs://1/0.0.900010"
+  },
+  "hrl": "hcs://1/0.0.900010"
+ },
+ {
+  "edition": 4,
+  "name": "Tiny Holo",
+  "creator": "Vera Labs",
+  "description": "Vera Labs Tiny — Holo.",
+  "image": "4.png",
+  "type": "image/png",
+  "format": "HIP412@2.0.0",
+  "attributes": [
+   {
+    "trait_type": "Rarity",
+    "value": "Holo"
+   },
+   {
+    "trait_type": "Artist",
+    "value": "Vera Labs"
+   },
+   {
+    "trait_type": "Protocol",
+    "value": "Hashinal"
+   },
+   {
+    "trait_type": "Series",
+    "value": "Tinies"
+   },
+   {
+    "trait_type": "Look",
+    "value": "Holo"
+   }
+  ],
+  "properties": {
+   "compiler": "Nodeling",
+   "contentHash": "ae9d35d939d232559d5aec1f82d31d19d28fba05432f9c5310c0ca4494639149",
+   "hrl": "hcs://1/0.0.900010"
+  },
+  "hrl": "hcs://1/0.0.900010"
+ }
+]

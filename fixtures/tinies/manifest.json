@@ -1,0 +1,35 @@
+{
+  "collectionId": "tinies",
+  "source": "Vera Labs /workspace/hedera-nft/tinies (local fixture copy)",
+  "note": "tinies_sheet.png is docs/preview only \u2014 not an edition",
+  "editions": [
+    {
+      "edition": 1,
+      "file": "tiny_01_beanie.png",
+      "name": "Tiny Beanie",
+      "trait": "Beanie",
+      "description": "Vera Labs Tiny \u2014 Beanie."
+    },
+    {
+      "edition": 2,
+      "file": "tiny_02_shades.png",
+      "name": "Tiny Shades",
+      "trait": "Shades",
+      "description": "Vera Labs Tiny \u2014 Shades."
+    },
+    {
+      "edition": 3,
+      "file": "tiny_03_astro.png",
+      "name": "Tiny Astro",
+      "trait": "Astro",
+      "description": "Vera Labs Tiny \u2014 Astro."
+    },
+    {
+      "edition": 4,
+      "file": "tiny_04_holo.png",
+      "name": "Tiny Holo",
+      "trait": "Holo",
+      "description": "Vera Labs Tiny \u2014 Holo."
+    }
+  ]
+}

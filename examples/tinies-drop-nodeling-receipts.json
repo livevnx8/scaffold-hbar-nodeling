@@ -1,0 +1,234 @@
+{
+  "compiler": "Nodeling",
+  "version": "1.0",
+  "collectionId": "tinies",
+  "hrl": "hcs://1/0.0.900010",
+  "maxEdition": 4,
+  "timestamp": 1700000100000,
+  "editions": [
+    {
+      "edition": 1,
+      "image": "1.png",
+      "contentHash": "d8069272a88f9670f5bebace2c741dfb5278132f614af4af54aea7f185e0799b",
+      "metadataHash": "28306d88ae67bf1153618d8d153661f92274fcceadbc7b1236fc5473e48a819b",
+      "hrl": "hcs://1/0.0.900010",
+      "taskHash": "87acb51139a7b33aea35f6568a195a25a6b42b010ee1f1180e00ba620b7e0467",
+      "decisionHash": "6e6e4cf325f614d6e967c8c15affdab959c39506070a20077cdcefad40580826",
+      "verdict": "verified",
+      "claimId": "drop-edition-1",
+      "receipt": {
+        "version": "1.0",
+        "timestamp": 1700000100001,
+        "claimId": "drop-edition-1",
+        "taskHash": "87acb51139a7b33aea35f6568a195a25a6b42b010ee1f1180e00ba620b7e0467",
+        "decisionHash": "6e6e4cf325f614d6e967c8c15affdab959c39506070a20077cdcefad40580826",
+        "verdict": "verified",
+        "checks": [
+          {
+            "name": "content_hash",
+            "ok": true,
+            "detail": "observed file hash matches claim.contentHash"
+          },
+          {
+            "name": "edition",
+            "ok": true,
+            "detail": "edition 1/4 in range"
+          },
+          {
+            "name": "creator",
+            "ok": true,
+            "detail": "creator=Vera Labs"
+          },
+          {
+            "name": "hrl",
+            "ok": true,
+            "detail": "hrl=hcs://1/0.0.900010"
+          },
+          {
+            "name": "metadata_hash",
+            "ok": true,
+            "detail": "metadataHash is 64-hex"
+          }
+        ],
+        "claim": {
+          "claimId": "drop-edition-1",
+          "collectionId": "tinies",
+          "creator": "Vera Labs",
+          "edition": 1,
+          "maxEdition": 4,
+          "contentHash": "d8069272a88f9670f5bebace2c741dfb5278132f614af4af54aea7f185e0799b",
+          "metadataHash": "28306d88ae67bf1153618d8d153661f92274fcceadbc7b1236fc5473e48a819b",
+          "hrl": "hcs://1/0.0.900010"
+        }
+      }
+    },
+    {
+      "edition": 2,
+      "image": "2.png",
+      "contentHash": "450adda4aa3c793f8ff7ab92e5e54c7402d87b99856750a127cd478c4ba33cac",
+      "metadataHash": "7600c70f61299ab90f05658aa4a5b6b1410a28a2711164e3089a787e3ff5d795",
+      "hrl": "hcs://1/0.0.900010",
+      "taskHash": "031215626fe9066bad3d87b30152d586d0e8a292578a3e2d365a2587678c0be6",
+      "decisionHash": "a336f2510be254da19b0aee7995fd0648505a7875626f2d7a40b69091a7cc1db",
+      "verdict": "verified",
+      "claimId": "drop-edition-2",
+      "receipt": {
+        "version": "1.0",
+        "timestamp": 1700000100002,
+        "claimId": "drop-edition-2",
+        "taskHash": "031215626fe9066bad3d87b30152d586d0e8a292578a3e2d365a2587678c0be6",
+        "decisionHash": "a336f2510be254da19b0aee7995fd0648505a7875626f2d7a40b69091a7cc1db",
+        "verdict": "verified",
+        "checks": [
+          {
+            "name": "content_hash",
+            "ok": true,
+            "detail": "observed file hash matches claim.contentHash"
+          },
+          {
+            "name": "edition",
+            "ok": true,
+            "detail": "edition 2/4 in range"
+          },
+          {
+            "name": "creator",
+            "ok": true,
+            "detail": "creator=Vera Labs"
+          },
+          {
+            "name": "hrl",
+            "ok": true,
+            "detail": "hrl=hcs://1/0.0.900010"
+          },
+          {
+            "name": "metadata_hash",
+            "ok": true,
+            "detail": "metadataHash is 64-hex"
+          }
+        ],
+        "claim": {
+          "claimId": "drop-edition-2",
+          "collectionId": "tinies",
+          "creator": "Vera Labs",
+          "edition": 2,
+          "maxEdition": 4,
+          "contentHash": "450adda4aa3c793f8ff7ab92e5e54c7402d87b99856750a127cd478c4ba33cac",
+          "metadataHash": "7600c70f61299ab90f05658aa4a5b6b1410a28a2711164e3089a787e3ff5d795",
+          "hrl": "hcs://1/0.0.900010"
+        }
+      }
+    },
+    {
+      "edition": 3,
+      "image": "3.png",
+      "contentHash": "f05d2bbcb0f4ac5dfae8954e870b7ca1c998d8c8619245fa084ac10984f6d224",
+      "metadataHash": "7354401e1543511cc58521deb00c5d2d80e3df396e44cf75fa532584a79692b1",
+      "hrl": "hcs://1/0.0.900010",
+      "taskHash": "34989e42c1719e362c8c2bac12aec915fd6f254b6f4ceafb72ce11ce7dead216",
+      "decisionHash": "4839ffd8eb2708f8b92fd5c10e8fa4900332d40ef3df8354dc2ccf6b944fe8b0",
+      "verdict": "verified",
+      "claimId": "drop-edition-3",
+      "receipt": {
+        "version": "1.0",
+        "timestamp": 1700000100003,
+        "claimId": "drop-edition-3",
+        "taskHash": "34989e42c1719e362c8c2bac12aec915fd6f254b6f4ceafb72ce11ce7dead216",
+        "decisionHash": "4839ffd8eb2708f8b92fd5c10e8fa4900332d40ef3df8354dc2ccf6b944fe8b0",
+        "verdict": "verified",
+        "checks": [
+          {
+            "name": "content_hash",
+            "ok": true,
+            "detail": "observed file hash matches claim.contentHash"
+          },
+          {
+            "name": "edition",
+            "ok": true,
+            "detail": "edition 3/4 in range"
+          },
+          {
+            "name": "creator",
+            "ok": true,
+            "detail": "creator=Vera Labs"
+          },
+          {
+            "name": "hrl",
+            "ok": true,
+            "detail": "hrl=hcs://1/0.0.900010"
+          },
+          {
+            "name": "metadata_hash",
+            "ok": true,
+            "detail": "metadataHash is 64-hex"
+          }
+        ],
+        "claim": {
+          "claimId": "drop-edition-3",
+          "collectionId": "tinies",
+          "creator": "Vera Labs",
+          "edition": 3,
+          "maxEdition": 4,
+          "contentHash": "f05d2bbcb0f4ac5dfae8954e870b7ca1c998d8c8619245fa084ac10984f6d224",
+          "metadataHash": "7354401e1543511cc58521deb00c5d2d80e3df396e44cf75fa532584a79692b1",
+          "hrl": "hcs://1/0.0.900010"
+        }
+      }
+    },
+    {
+      "edition": 4,
+      "image": "4.png",
+      "contentHash": "ae9d35d939d232559d5aec1f82d31d19d28fba05432f9c5310c0ca4494639149",
+      "metadataHash": "8f94df5a8812f2492fed37ea3121be9c8f64cee187971595a3532ffa30ac9578",
+      "hrl": "hcs://1/0.0.900010",
+      "taskHash": "6f4a4f6dfbea6ae422d00b18eb7b6c9ca22950d5f07a667109673ce17145f567",
+      "decisionHash": "4c4cd6e97fc64f3de1b6bae6bbd12d142931158df66d1b80e2b2a1fac3cb8dcb",
+      "verdict": "verified",
+      "claimId": "drop-edition-4",
+      "receipt": {
+        "version": "1.0",
+        "timestamp": 1700000100004,
+        "claimId": "drop-edition-4",
+        "taskHash": "6f4a4f6dfbea6ae422d00b18eb7b6c9ca22950d5f07a667109673ce17145f567",
+        "decisionHash": "4c4cd6e97fc64f3de1b6bae6bbd12d142931158df66d1b80e2b2a1fac3cb8dcb",
+        "verdict": "verified",
+        "checks": [
+          {
+            "name": "content_hash",
+            "ok": true,
+            "detail": "observed file hash matches claim.contentHash"
+          },
+          {
+            "name": "edition",
+            "ok": true,
+            "detail": "edition 4/4 in range"
+          },
+          {
+            "name": "creator",
+            "ok": true,
+            "detail": "creator=Vera Labs"
+          },
+          {
+            "name": "hrl",
+            "ok": true,
+            "detail": "hrl=hcs://1/0.0.900010"
+          },
+          {
+            "name": "metadata_hash",
+            "ok": true,
+            "detail": "metadataHash is 64-hex"
+          }
+        ],
+        "claim": {
+          "claimId": "drop-edition-4",
+          "collectionId": "tinies",
+          "creator": "Vera Labs",
+          "edition": 4,
+          "maxEdition": 4,
+          "contentHash": "ae9d35d939d232559d5aec1f82d31d19d28fba05432f9c5310c0ca4494639149",
+          "metadataHash": "8f94df5a8812f2492fed37ea3121be9c8f64cee187971595a3532ffa30ac9578",
+          "hrl": "hcs://1/0.0.900010"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "scaffold-hbar-nodeling",
+  "description": "Scaffold-HBAR template: Nodeling — Vera Labs' Hashinal authenticity + NFT mint pad (offline-first). NFT-first; Phase 2: music drops.",
+  "packageManager": "npm@10.9.4",
+  "private": true,
+  "scripts": {
+    "build": "npm run build --workspace=@nodeling/core && npm run build --workspace=@nodeling/x402-hooks && npm run build --workspace=@nodeling/nextjs",
+    "start": "npm start --workspace=@nodeling/nextjs",
+    "test": "npm run build:test-deps && npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "format": "echo 'format: no formatter configured'",
+    "demo": "npm run demo --workspace=@nodeling/core && COLLECTION=tinies npm run drop:build --workspace=@nodeling/core && npm run mint:plan --workspace=@nodeling/core",
+    "build:test-deps": "npm run build --workspace=@nodeling/core && npm run build --workspace=@nodeling/x402-hooks",
+    "drop:build": "COLLECTION=${COLLECTION:-tinies} npm run drop:build --workspace=@nodeling/core",
+    "mint:plan": "npm run mint:plan --workspace=@nodeling/core",
+    "drop:build:all": "COLLECTION=all npm run drop:build --workspace=@nodeling/core",
+    "drop:build:demo": "COLLECTION=demo npm run drop:build --workspace=@nodeling/core",
+    "mint:live": "npm run mint:live --workspace=@nodeling/core --",
+    "inscribe:live": "npm run inscribe:live --workspace=@nodeling/core --"
+  },
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "eslint": "^9.22.0",
+    "typescript-eslint": "^8.26.0"
+  },
+  "engines": {
+    "node": ">=20.18.3"
+  },
+  "allowScripts": {
+    "@mongodb-js/zstd@7.0.0": true
+  }
+}

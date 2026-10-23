@@ -1,0 +1,416 @@
+{
+  "collectionId": "nodlings",
+  "source": "Sample of 8 from /workspace/43v3r/43v3r-nodlings-673.zip (dreamforge/). Full 673 set stays outside this scaffold.",
+  "sourceIds": [
+    10,
+    25,
+    68,
+    77,
+    111,
+    119,
+    122,
+    190
+  ],
+  "editions": [
+    {
+      "edition": 1,
+      "sourceId": 10,
+      "file": "10.png",
+      "metaFile": "10.json",
+      "name": "Nodling #1",
+      "description": "Nano",
+      "creator": "Vera Labs",
+      "sourceName": "43V3R 3dt.",
+      "nodling_id": 2022,
+      "rarity": "Common",
+      "attributes": [
+        {
+          "trait_type": "Background",
+          "value": "Teal"
+        },
+        {
+          "trait_type": "Hoodie Color",
+          "value": "Mustard"
+        },
+        {
+          "trait_type": "Pattern",
+          "value": "Camo"
+        },
+        {
+          "trait_type": "Hood Top",
+          "value": "Cat Ears"
+        },
+        {
+          "trait_type": "Screen Face",
+          "value": "Consensus"
+        },
+        {
+          "trait_type": "Glow",
+          "value": "Cyan"
+        },
+        {
+          "trait_type": "Emblem",
+          "value": "None"
+        },
+        {
+          "trait_type": "Accessory",
+          "value": "Gold Chain"
+        },
+        {
+          "trait_type": "Rarity Tier",
+          "value": "Common"
+        }
+      ]
+    },
+    {
+      "edition": 2,
+      "sourceId": 25,
+      "file": "25.png",
+      "metaFile": "25.json",
+      "name": "Nodling #2",
+      "description": "Nano",
+      "creator": "Vera Labs",
+      "sourceName": "43V3R 3dt.",
+      "nodling_id": 343,
+      "rarity": "Common",
+      "attributes": [
+        {
+          "trait_type": "Background",
+          "value": "Pastel Checker"
+        },
+        {
+          "trait_type": "Hoodie Color",
+          "value": "Mustard"
+        },
+        {
+          "trait_type": "Pattern",
+          "value": "None"
+        },
+        {
+          "trait_type": "Hood Top",
+          "value": "Bunny Ears"
+        },
+        {
+          "trait_type": "Screen Face",
+          "value": "Sleepy"
+        },
+        {
+          "trait_type": "Glow",
+          "value": "Green"
+        },
+        {
+          "trait_type": "Emblem",
+          "value": "Hood Triad"
+        },
+        {
+          "trait_type": "Accessory",
+          "value": "Skateboard"
+        },
+        {
+          "trait_type": "Rarity Tier",
+          "value": "Common"
+        }
+      ]
+    },
+    {
+      "edition": 3,
+      "sourceId": 68,
+      "file": "68.png",
+      "metaFile": "68.json",
+      "name": "Nodling #3",
+      "description": "Nano",
+      "creator": "Vera Labs",
+      "sourceName": "43V3R 3dt.",
+      "nodling_id": 1528,
+      "rarity": "Common",
+      "attributes": [
+        {
+          "trait_type": "Background",
+          "value": "Lime"
+        },
+        {
+          "trait_type": "Hoodie Color",
+          "value": "Bubblegum"
+        },
+        {
+          "trait_type": "Pattern",
+          "value": "None"
+        },
+        {
+          "trait_type": "Hood Top",
+          "value": "Halo"
+        },
+        {
+          "trait_type": "Screen Face",
+          "value": "Smile"
+        },
+        {
+          "trait_type": "Glow",
+          "value": "Magenta"
+        },
+        {
+          "trait_type": "Emblem",
+          "value": "None"
+        },
+        {
+          "trait_type": "Accessory",
+          "value": "None"
+        },
+        {
+          "trait_type": "Rarity Tier",
+          "value": "Common"
+        }
+      ]
+    },
+    {
+      "edition": 4,
+      "sourceId": 77,
+      "file": "77.png",
+      "metaFile": "77.json",
+      "name": "Nodling #4",
+      "description": "Nano",
+      "creator": "Vera Labs",
+      "sourceName": "43V3R 3dt.",
+      "nodling_id": 2061,
+      "rarity": "Common",
+      "attributes": [
+        {
+          "trait_type": "Background",
+          "value": "Teal"
+        },
+        {
+          "trait_type": "Hoodie Color",
+          "value": "Cream"
+        },
+        {
+          "trait_type": "Pattern",
+          "value": "Stars"
+        },
+        {
+          "trait_type": "Hood Top",
+          "value": "Devil Horns"
+        },
+        {
+          "trait_type": "Screen Face",
+          "value": "Coin Eyes"
+        },
+        {
+          "trait_type": "Glow",
+          "value": "Cyan"
+        },
+        {
+          "trait_type": "Emblem",
+          "value": "None"
+        },
+        {
+          "trait_type": "Accessory",
+          "value": "Bandana"
+        },
+        {
+          "trait_type": "Rarity Tier",
+          "value": "Common"
+        }
+      ]
+    },
+    {
+      "edition": 5,
+      "sourceId": 111,
+      "file": "111.png",
+      "metaFile": "111.json",
+      "name": "Nodling #5",
+      "description": "Nano",
+      "creator": "Vera Labs",
+      "sourceName": "43V3R 3dt.",
+      "nodling_id": 1833,
+      "rarity": "Common",
+      "attributes": [
+        {
+          "trait_type": "Background",
+          "value": "Sky"
+        },
+        {
+          "trait_type": "Hoodie Color",
+          "value": "Tomato"
+        },
+        {
+          "trait_type": "Pattern",
+          "value": "None"
+        },
+        {
+          "trait_type": "Hood Top",
+          "value": "Cat Ears"
+        },
+        {
+          "trait_type": "Screen Face",
+          "value": "X Eyes"
+        },
+        {
+          "trait_type": "Glow",
+          "value": "Green"
+        },
+        {
+          "trait_type": "Emblem",
+          "value": "Hood Mesh"
+        },
+        {
+          "trait_type": "Accessory",
+          "value": "None"
+        },
+        {
+          "trait_type": "Rarity Tier",
+          "value": "Common"
+        }
+      ]
+    },
+    {
+      "edition": 6,
+      "sourceId": 119,
+      "file": "119.png",
+      "metaFile": "119.json",
+      "name": "Nodling #6",
+      "description": "Nano",
+      "creator": "Vera Labs",
+      "sourceName": "43V3R 3dt.",
+      "nodling_id": 1606,
+      "rarity": "Common",
+      "attributes": [
+        {
+          "trait_type": "Background",
+          "value": "Lavender"
+        },
+        {
+          "trait_type": "Hoodie Color",
+          "value": "Sky"
+        },
+        {
+          "trait_type": "Pattern",
+          "value": "Checker"
+        },
+        {
+          "trait_type": "Hood Top",
+          "value": "Floppy Ears"
+        },
+        {
+          "trait_type": "Screen Face",
+          "value": "Sleepy"
+        },
+        {
+          "trait_type": "Glow",
+          "value": "Orange"
+        },
+        {
+          "trait_type": "Emblem",
+          "value": "None"
+        },
+        {
+          "trait_type": "Accessory",
+          "value": "None"
+        },
+        {
+          "trait_type": "Rarity Tier",
+          "value": "Common"
+        }
+      ]
+    },
+    {
+      "edition": 7,
+      "sourceId": 122,
+      "file": "122.png",
+      "metaFile": "122.json",
+      "name": "Nodling #7",
+      "description": "Nano",
+      "creator": "Vera Labs",
+      "sourceName": "43V3R 3dt.",
+      "nodling_id": 409,
+      "rarity": "Common",
+      "attributes": [
+        {
+          "trait_type": "Background",
+          "value": "Coral"
+        },
+        {
+          "trait_type": "Hoodie Color",
+          "value": "Charcoal"
+        },
+        {
+          "trait_type": "Pattern",
+          "value": "None"
+        },
+        {
+          "trait_type": "Hood Top",
+          "value": "None"
+        },
+        {
+          "trait_type": "Screen Face",
+          "value": "Smirk"
+        },
+        {
+          "trait_type": "Glow",
+          "value": "Orange"
+        },
+        {
+          "trait_type": "Emblem",
+          "value": "None"
+        },
+        {
+          "trait_type": "Accessory",
+          "value": "Bandana"
+        },
+        {
+          "trait_type": "Rarity Tier",
+          "value": "Common"
+        }
+      ]
+    },
+    {
+      "edition": 8,
+      "sourceId": 190,
+      "file": "190.png",
+      "metaFile": "190.json",
+      "name": "Nodling #8",
+      "description": "Nano",
+      "creator": "Vera Labs",
+      "sourceName": "43V3R 3dt.",
+      "nodling_id": 2825,
+      "rarity": "Common",
+      "attributes": [
+        {
+          "trait_type": "Background",
+          "value": "Mint"
+        },
+        {
+          "trait_type": "Hoodie Color",
+          "value": "Lilac"
+        },
+        {
+          "trait_type": "Pattern",
+          "value": "Camo"
+        },
+        {
+          "trait_type": "Hood Top",
+          "value": "Propeller Beanie"
+        },
+        {
+          "trait_type": "Screen Face",
+          "value": "Grin"
+        },
+        {
+          "trait_type": "Glow",
+          "value": "Magenta"
+        },
+        {
+          "trait_type": "Emblem",
+          "value": "None"
+        },
+        {
+          "trait_type": "Accessory",
+          "value": "None"
+        },
+        {
+          "trait_type": "Rarity Tier",
+          "value": "Common"
+        }
+      ]
+    }
+  ]
+}

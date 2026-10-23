@@ -1,0 +1,59 @@
+{
+  "create-scaffold-hbar": {
+    "capabilities": {
+      "frontend": [
+        "nextjs-app"
+      ],
+      "packageManager": [
+        "npm",
+        "yarn"
+      ],
+      "solidityFramework": [
+        "hardhat"
+      ]
+    },
+    "defaults": {
+      "frontend": "nextjs-app",
+      "packageManager": "npm",
+      "solidityFramework": "hardhat"
+    },
+    "outro": {
+      "sections": [
+        {
+          "steps": [
+            {
+              "text": "Nodeling prepares Hashinal NFT collections with authenticity receipts and multi-collection allowlists. No Hedera account is needed for the offline demo. How others use it: docs/for-others.md (creator \u00b7 collector \u00b7 builder) and UI /start. List minted Hashinals on SentX DreamForge / HashPack \u2014 this is not a marketplace competitor."
+            }
+          ]
+        },
+        {
+          "title": "Suggested steps",
+          "steps": [
+            {
+              "command": "npm install && npm run build && npm run demo",
+              "label": "Install, build, and run the offline demo (GREEN/RED + DROP PASS)"
+            },
+            {
+              "command": "npm run dev --workspace=@nodeling/nextjs",
+              "label": "Start the mint pad \u2014 open /start first, then /, /verify, /allowlist, /about"
+            },
+            {
+              "label": "Read how others utilize Nodeling",
+              "text": "docs/for-others.md \u2014 day-one checklist + creator / collector / builder paths. Spec: docs/NODELING-HASHINAL.md."
+            },
+            {
+              "label": "Verify a package",
+              "text": "Paste *-nodeling-receipts.json (or a fixture receipt) on /verify. GREEN = clean; RED = tamper / bad edition / forged allowlist."
+            },
+            {
+              "label": "Copy the env file (optional, later testnet only)",
+              "text": "packages/nextjs/.env.example \u2192 packages/nextjs/.env \u2014 never put keys in the browser."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "description": "Nodeling \u2014 Vera Labs' Hashinal authenticity + NFT mint pad (HCS-5 NFTs with HCS-1 media via hcs://1/<topic> HRLs). Offline collection prep, authenticity receipts, multi-collection allowlists; SentX DreamForge / HashPack list-compatible. Start: docs/for-others.md \u00b7 npm run demo \u00b7 UI /start. Phase 2: music drops.",
+  "name": "nodeling"
+}

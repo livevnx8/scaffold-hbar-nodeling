@@ -1,0 +1,46 @@
+collectionId: tinies
+name: Tinies
+symbol: TINY
+creator: Vera Labs
+description: Vera Labs Tinies — Hashinal-ready edition {n} ({tier}). Prep in Nodeling → list on SentX DreamForge.
+maxEdition: 4
+royalty:
+  percent: 5
+  collectorAccount: "0.0.8001"
+hrlTopic: "0.0.900010"
+nameTemplate: "Tiny {tier}"
+tiers:
+  - key: beanie
+    name: Beanie
+    count: 1
+  - key: shades
+    name: Shades
+    count: 1
+  - key: astro
+    name: Astro
+    count: 1
+  - key: holo
+    name: Holo
+    count: 1
+attributes:
+  - trait_type: Artist
+    value: Vera Labs
+  - trait_type: Protocol
+    value: Hashinal
+  - trait_type: Series
+    value: Tinies
+allowlistSnapshotRef: allowlist-snapshot.json
+stages:
+  - id: wl
+    name: Allowlist
+    kind: allowlist
+    start: "2026-10-01T00:00:00.000Z"
+    end: "2026-10-15T00:00:00.000Z"
+    priceHbar: "25"
+    snapshotRef: allowlist-snapshot.json
+  - id: pub
+    name: Public
+    kind: public
+    start: "2026-10-15T00:00:00.000Z"
+    end: "2026-11-01T00:00:00.000Z"
+    priceHbar: "50"

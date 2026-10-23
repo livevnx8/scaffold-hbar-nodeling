@@ -1,0 +1,36 @@
+{
+  "compiler": "Nodeling",
+  "hrl": "hcs://1/0.0.900010",
+  "files": {
+    "1.png": "d8069272a88f9670f5bebace2c741dfb5278132f614af4af54aea7f185e0799b",
+    "2.png": "450adda4aa3c793f8ff7ab92e5e54c7402d87b99856750a127cd478c4ba33cac",
+    "3.png": "f05d2bbcb0f4ac5dfae8954e870b7ca1c998d8c8619245fa084ac10984f6d224",
+    "4.png": "ae9d35d939d232559d5aec1f82d31d19d28fba05432f9c5310c0ca4494639149"
+  },
+  "editions": [
+    {
+      "edition": 1,
+      "image": "1.png",
+      "contentHash": "d8069272a88f9670f5bebace2c741dfb5278132f614af4af54aea7f185e0799b",
+      "hrl": "hcs://1/0.0.900010"
+    },
+    {
+      "edition": 2,
+      "image": "2.png",
+      "contentHash": "450adda4aa3c793f8ff7ab92e5e54c7402d87b99856750a127cd478c4ba33cac",
+      "hrl": "hcs://1/0.0.900010"
+    },
+    {
+      "edition": 3,
+      "image": "3.png",
+      "contentHash": "f05d2bbcb0f4ac5dfae8954e870b7ca1c998d8c8619245fa084ac10984f6d224",
+      "hrl": "hcs://1/0.0.900010"
+    },
+    {
+      "edition": 4,
+      "image": "4.png",
+      "contentHash": "ae9d35d939d232559d5aec1f82d31d19d28fba05432f9c5310c0ca4494639149",
+      "hrl": "hcs://1/0.0.900010"
+    }
+  ]
+}

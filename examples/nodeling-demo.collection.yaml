@@ -1,0 +1,36 @@
+# Nodeling collection config (YAML subset — JSON is canonical).
+# Load with loadCollectionConfig('…collection.yaml') or the .json twin.
+collectionId: nodeling-demo
+name: Nodeling Demo
+symbol: NODE
+creator: Vera Labs
+description: "Nodeling demo Hashinal-ready NFT #{n} ({tier}). Prep here → list on SentX DreamForge."
+maxEdition: 8
+royalty:
+  percent: 5
+  collectorAccount: 0.0.8001
+hrlTopic: 0.0.900001
+nameTemplate: "Nodeling Demo #{n}"
+allowlistSnapshotRef: allowlist-snapshot.json
+tiers:
+  - {key: common, name: Common, count: 5}
+  - {key: rare, name: Rare, count: 2}
+  - {key: legendary, name: Legendary, count: 1}
+attributes:
+  - {trait_type: Artist, value: Vera Labs}
+  - {trait_type: Protocol, value: Hashinal}
+  - {trait_type: Series, value: Demo}
+stages:
+  - id: wl
+    name: Allowlist
+    kind: allowlist
+    start: 2026-10-01T00:00:00.000Z
+    end: 2026-10-15T00:00:00.000Z
+    priceHbar: "50"
+    snapshotRef: allowlist-snapshot.json
+  - id: pub
+    name: Public
+    kind: public
+    start: 2026-10-15T00:00:00.000Z
+    end: 2026-11-01T00:00:00.000Z
+    priceHbar: "100"

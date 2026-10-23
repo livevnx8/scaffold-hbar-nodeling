@@ -1,0 +1,39 @@
+collectionId: nodlings
+name: Nodlings
+symbol: NODL
+creator: Vera Labs
+description: Vera Labs Nodlings sample #{n} ({tier}). 8-edition scaffold fixture from the DreamForge set — full 673 stays outside the repo.
+maxEdition: 8
+royalty:
+  percent: 5
+  collectorAccount: "0.0.8001"
+hrlTopic: "0.0.900020"
+nameTemplate: "Nodling #{n}"
+tiers:
+  - key: common
+    name: Common
+    count: 8
+attributes:
+  - trait_type: Artist
+    value: Vera Labs
+  - trait_type: Protocol
+    value: Hashinal
+  - trait_type: Series
+    value: Nodlings
+  - trait_type: Sample
+    value: "8 of 673"
+allowlistSnapshotRef: allowlist-snapshot.json
+stages:
+  - id: wl
+    name: Allowlist
+    kind: allowlist
+    start: "2026-10-01T00:00:00.000Z"
+    end: "2026-10-15T00:00:00.000Z"
+    priceHbar: "40"
+    snapshotRef: allowlist-snapshot.json
+  - id: pub
+    name: Public
+    kind: public
+    start: "2026-10-15T00:00:00.000Z"
+    end: "2026-11-01T00:00:00.000Z"
+    priceHbar: "80"
