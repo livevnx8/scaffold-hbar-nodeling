@@ -5,6 +5,8 @@ v0 defaults to **dry-run / offline**. Nodeling builds Hashinal **payloads** with
 
 Live submit is **opt-in only**: exact `--live` plus testnet operator env.
 
+Public CI (no keys): [`.github/workflows/ci.yml`](../.github/workflows/ci.yml) runs `npm test` / `lint` / `build` / `demo` on push/PR to `main`.
+
 ## Hashinal mint pattern (what the dry-run models)
 
 1. **Inscribe** file/metadata with HCS-1 (Hashgraph Online / KiloScribe) → topic id

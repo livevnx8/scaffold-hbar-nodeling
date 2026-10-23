@@ -1,5 +1,7 @@
 # Nodeling testnet smoke log
 
+> **Known gap (medium):** this smoke NFT's metadata HRL points at **empty** topic `0.0.11144786`. File bytes are on `0.0.11144977`. Do **not** present NFT `0.0.11144787` as a fully linked Hashinal until `npm run mint:live -- --live --hrl hcs://1/0.0.11144977` (needs ≥ ~15 HBAR).
+
 Public ids only — no keys.
 
 | Field | Value |

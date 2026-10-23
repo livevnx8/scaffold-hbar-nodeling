@@ -65,6 +65,21 @@ npm run verify:testnet
 5. **Verify** - `npm run verify:testnet` + `/verify` UI for packages
 6. **List** - manual SentX DreamForge / HashPack (never from this template)
 
+
+## Verification boundaries (do not overclaim)
+
+- `verifyAuthenticityReceipt` — receipt **self-consistency** only (`taskHash` / `decisionHash`). Does **not** re-check files on disk.
+- `verifyDropPackage` / verify-from-package — re-hashes files vs sidecars (use this for package tamper checks).
+- Allowlist: check is optional unless `claim.allowlistSnapshotHash` is set. Build trusts caller-supplied `allowlistMember` — pass `verifyAllowlistMembership(...)` explicitly; do not assume `verifyAuthenticityReceipt` re-proves membership.
+
+HashScan index (testnet): see [testnet-smoke-log.md](./testnet-smoke-log.md), [testnet-hcs1-inscribe-log.md](./testnet-hcs1-inscribe-log.md), [testnet-anchor-log.md](./testnet-anchor-log.md).
+
 ## Known gap (severity: medium until funded)
 
-Smoke NFT `0.0.11144787` metadata points at empty topic `0.0.11144786`, while HOL file bytes live on `0.0.11144977`. Closing the link requires another TokenCreate (~12+ HBAR) with `--hrl hcs://1/0.0.11144977`. Operator balance at last check was ~7.58 HBAR (faucet Cloudflare-blocked from this box).
+**Do not miss this:** smoke NFT [`0.0.11144787`](https://hashscan.io/testnet/token/0.0.11144787) metadata HRL → **empty** topic [`0.0.11144786`](https://hashscan.io/testnet/topic/0.0.11144786) (no file chunks). File bytes live on [`0.0.11144977`](https://hashscan.io/testnet/topic/0.0.11144977) (`hcs://1/0.0.11144977`). Closing the Hashinal link needs another TokenCreate (~12+ HBAR; fund **≥ ~15 HBAR**):
+
+```bash
+npm run mint:live -- --live --hrl hcs://1/0.0.11144977
+```
+
+Operator balance at last check was ~7.5 HBAR (faucet Cloudflare-blocked from some environments). Until that mint lands, the demo Hashinal does **not** point at its inscribed file.

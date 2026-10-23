@@ -30,13 +30,15 @@ Checks (v0):
 - `metadata_hash` — 64-hex
 - `allowlist` — optional membership against published snapshot
 
-`verifyAuthenticityReceipt` recomputes hashes so a forged receipt cannot pass.
+`verifyAuthenticityReceipt` recomputes `taskHash` / `decisionHash` so a **forged-after-the-fact** receipt cannot pass. That is **self-consistency only** — it does **not** re-hash files on disk or re-check allowlist membership against a snapshot. File/package re-check is `verifyDropPackage` (Node) / verify-from-package; membership is `verifyAllowlistMembership`.
 
 ## Allowlists
 
 Holder CSVs from multiple collections are merged → sorted unique accounts →
 `snapshotHash = sha256(canonicalize({ collections, accounts }))`. Membership is an
 offline binary search. Forged snapshot hashes fail integrity.
+
+**Misuse risk (by design):** the allowlist check in `buildAuthenticityReceipt` runs only when `claim.allowlistSnapshotHash` is set — omitting the snapshot hash skips membership (optional). When a snapshot *is* set, build requires `allowlistMember === true` (omitting the flag rejects), but build does **not** invoke `verifyAllowlistMembership` itself. Callers who pass `allowlistMember: true` without checking (or who omit the snapshot hash to skip the gate) can produce a green receipt; `verifyAuthenticityReceipt` will still pass because it only checks hash self-consistency. Always pass `allowlistMember: verifyAllowlistMembership(snapshot, minter)` when a snapshot is in play.
 
 
 ## DreamForge drop packages

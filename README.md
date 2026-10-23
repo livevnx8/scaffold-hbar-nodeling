@@ -97,6 +97,40 @@ Example after `npm run drop:build` (Tinies default):
 | `examples/tinies-drop-nodeling-hashes.json` | Content hashes sidecar |
 | `examples/tinies-drop-nodeling-receipts.json` | Authenticity receipts sidecar |
 
+
+## Testnet status (public)
+
+Read-only re-proof: `npm run verify:testnet`. Evidence + HashScan links:
+[docs/testnet-e2e-checklist.md](./docs/testnet-e2e-checklist.md) ·
+[docs/testnet-smoke-log.md](./docs/testnet-smoke-log.md) ·
+[docs/testnet-hcs1-inscribe-log.md](./docs/testnet-hcs1-inscribe-log.md) ·
+[docs/testnet-anchor-log.md](./docs/testnet-anchor-log.md).
+
+### Known gap (medium) — smoke NFT HRL ≠ file topic
+
+| | Id | HashScan |
+|---|-----|----------|
+| Smoke NFT | `0.0.11144787` serial 1 | [token](https://hashscan.io/testnet/token/0.0.11144787) · [NFT #1](https://hashscan.io/testnet/token/0.0.11144787/1) |
+| Metadata HRL points at | empty topic `0.0.11144786` (no file chunks) | [topic](https://hashscan.io/testnet/topic/0.0.11144786) |
+| File bytes (HCS-1 HOL) live on | `0.0.11144977` — HRL `hcs://1/0.0.11144977` | [topic](https://hashscan.io/testnet/topic/0.0.11144977) |
+| Registry | `0xF19e3390933b318808a0df5Ed4fbD18783f10234` | [contract](https://hashscan.io/testnet/contract/0xF19e3390933b318808a0df5Ed4fbD18783f10234) |
+
+Closing the Hashinal link needs another TokenCreate (~12+ HBAR; fund ≥ ~15 HBAR):
+
+```bash
+npm run mint:live -- --live --hrl hcs://1/0.0.11144977
+```
+
+Do **not** treat the current smoke NFT as proof that metadata resolves to inscribed file bytes.
+
+### Verification boundaries (do not overclaim)
+
+- `verifyAuthenticityReceipt(receipt)` — **self-consistency only** (recomputes `taskHash` / `decisionHash`). It does **not** re-hash files on disk.
+- Package / file re-check — `verifyDropPackage(folder)` (or verify-from-package / `/verify` with a receipts package + local files via drop tooling).
+- **Allowlist misuse risk:** the allowlist check runs only when `claim.allowlistSnapshotHash` is set. Omitting the snapshot hash skips membership (optional by design). When a snapshot *is* set, build requires `allowlistMember === true`, but build does **not** call `verifyAllowlistMembership` itself — callers who pass `allowlistMember: true` without checking can mint a green receipt; `verifyAuthenticityReceipt` will still pass that forged membership flag. Always pass `allowlistMember: verifyAllowlistMembership(snapshot, minter)`.
+
+CI: [`.github/workflows/ci.yml`](./.github/workflows/ci.yml) runs `npm ci` → `npm test` → `npm run lint` → `npm run build` → `npm run demo` on every push/PR to `main`.
+
 ## Packages
 
 | Package | Role |
@@ -129,6 +163,7 @@ npm run dev --workspace=@nodeling/nextjs
 - [Nodeling Hashinal (canonical)](./docs/NODELING-HASHINAL.md)
 - [How it works](./docs/how-it-works.md)
 - [Going to testnet](./docs/going-to-testnet.md)
+- [Testnet E2E checklist](./docs/testnet-e2e-checklist.md) — offline + HashScan + known gap
 - [Walkthrough](./docs/walkthrough.md)
 
 ## Positioning
