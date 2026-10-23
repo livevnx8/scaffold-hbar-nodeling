@@ -106,22 +106,19 @@ Read-only re-proof: `npm run verify:testnet`. Evidence + HashScan links:
 [docs/testnet-hcs1-inscribe-log.md](./docs/testnet-hcs1-inscribe-log.md) ·
 [docs/testnet-anchor-log.md](./docs/testnet-anchor-log.md).
 
-### Known gap (medium) — smoke NFT HRL ≠ file topic
+### Canonical demo — linked Hashinal (gap CLOSED)
 
 | | Id | HashScan |
 |---|-----|----------|
-| Smoke NFT | `0.0.11144787` serial 1 | [token](https://hashscan.io/testnet/token/0.0.11144787) · [NFT #1](https://hashscan.io/testnet/token/0.0.11144787/1) |
-| Metadata HRL points at | empty topic `0.0.11144786` (no file chunks) | [topic](https://hashscan.io/testnet/topic/0.0.11144786) |
-| File bytes (HCS-1 HOL) live on | `0.0.11144977` — HRL `hcs://1/0.0.11144977` | [topic](https://hashscan.io/testnet/topic/0.0.11144977) |
+| Linked smoke NFT | `0.0.11146645` serial 1 | [token](https://hashscan.io/testnet/token/0.0.11146645) · [NFT #1](https://hashscan.io/testnet/token/0.0.11146645/1) |
+| Metadata HRL | `hcs://1/0.0.11144977` → file topic with HOL bytes | [topic](https://hashscan.io/testnet/topic/0.0.11144977) |
+| TokenCreate | `0.0.10729262@1792786827.056233975` | [tx](https://hashscan.io/testnet/transaction/0.0.10729262%401792786827.056233975) |
+| TokenMint | `0.0.10729262@1792786831.874170255` | [tx](https://hashscan.io/testnet/transaction/0.0.10729262%401792786831.874170255) |
 | Registry | `0xF19e3390933b318808a0df5Ed4fbD18783f10234` | [contract](https://hashscan.io/testnet/contract/0xF19e3390933b318808a0df5Ed4fbD18783f10234) |
 
-Closing the Hashinal link needs another TokenCreate (~12+ HBAR; fund ≥ ~15 HBAR):
+Command that closed the link: `npm run mint:live -- --live --hrl hcs://1/0.0.11144977` (funded with 12 HBAR from `0.0.9034044`). Full table: [docs/testnet-smoke-log.md](./docs/testnet-smoke-log.md).
 
-```bash
-npm run mint:live -- --live --hrl hcs://1/0.0.11144977
-```
-
-Do **not** treat the current smoke NFT as proof that metadata resolves to inscribed file bytes.
+**Historical only** (superseded empty-topic smoke): NFT `0.0.11144787` → empty topic `0.0.11144786` — do not pitch as the demo Hashinal.
 
 ### Verification boundaries (do not overclaim)
 

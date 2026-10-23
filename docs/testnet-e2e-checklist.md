@@ -31,11 +31,11 @@ Expected PASS:
 
 | Check | Id |
 |-------|-----|
-| Smoke topic | `0.0.11144786` |
-| NFT | `0.0.11144787` serial 1 - metadata `hcs://1/0.0.11144786` |
-| HCS-1 HOL | `0.0.11144977` - hash `05fe3924...2a04` |
-| Registry | `0xF19e3390933b318808a0df5Ed4fbD18783f10234` |
+| Linked NFT (canonical) | [`0.0.11146645`](https://hashscan.io/testnet/token/0.0.11146645) serial [1](https://hashscan.io/testnet/token/0.0.11146645/1) — metadata `hcs://1/0.0.11144977` |
+| HCS-1 HOL file topic | [`0.0.11144977`](https://hashscan.io/testnet/topic/0.0.11144977) — hash `05fe3924...2a04` |
+| Registry | [`0xF19e3390933b318808a0df5Ed4fbD18783f10234`](https://hashscan.io/testnet/contract/0xF19e3390933b318808a0df5Ed4fbD18783f10234) |
 | Anchored claim | `nodeling-smoke-2026-10-23` / `0x92c57760…7f42aa79` — verifyReceipt PASS ([log](./testnet-anchor-log.md)) |
+| Historical empty-topic smoke | NFT `0.0.11144787` → topic `0.0.11144786` (superseded; see [smoke log](./testnet-smoke-log.md)) |
 
 ## Live (gated `--live`, testnet only)
 
@@ -74,12 +74,16 @@ npm run verify:testnet
 
 HashScan index (testnet): see [testnet-smoke-log.md](./testnet-smoke-log.md), [testnet-hcs1-inscribe-log.md](./testnet-hcs1-inscribe-log.md), [testnet-anchor-log.md](./testnet-anchor-log.md).
 
-## Known gap (severity: medium until funded)
+## Linked Hashinal status — gap CLOSED
 
-**Do not miss this:** smoke NFT [`0.0.11144787`](https://hashscan.io/testnet/token/0.0.11144787) metadata HRL → **empty** topic [`0.0.11144786`](https://hashscan.io/testnet/topic/0.0.11144786) (no file chunks). File bytes live on [`0.0.11144977`](https://hashscan.io/testnet/topic/0.0.11144977) (`hcs://1/0.0.11144977`). Closing the Hashinal link needs another TokenCreate (~12+ HBAR; fund **≥ ~15 HBAR**):
+Canonical demo NFT [`0.0.11146645`](https://hashscan.io/testnet/token/0.0.11146645)#1 metadata = `hcs://1/0.0.11144977` (HOL file topic). Closed with:
 
 ```bash
 npm run mint:live -- --live --hrl hcs://1/0.0.11144977
 ```
 
-Operator balance at last check was ~7.5 HBAR (faucet Cloudflare-blocked from some environments). Until that mint lands, the demo Hashinal does **not** point at its inscribed file.
+- TokenCreate: [0.0.10729262@1792786827.056233975](https://hashscan.io/testnet/transaction/0.0.10729262%401792786827.056233975)
+- TokenMint: [0.0.10729262@1792786831.874170255](https://hashscan.io/testnet/transaction/0.0.10729262%401792786831.874170255)
+- Funding: 12 HBAR `0.0.9034044` → `0.0.10729262`, [0.0.9034044@1792786813.724555420](https://hashscan.io/testnet/transaction/0.0.9034044%401792786813.724555420)
+
+**Historical only:** empty-topic smoke NFT `0.0.11144787` → `0.0.11144786` — superseded; do not present as the demo Hashinal.

@@ -5,10 +5,10 @@
  * Usage: npm run verify:testnet
  *
  * Defaults (override via env):
- *   NODELING_SMOKE_TOPIC_ID=0.0.11144786
- *   NODELING_SMOKE_TOKEN_ID=0.0.11144787
+ *   NODELING_SMOKE_TOPIC_ID=0.0.11144977   # HCS-1 file topic (linked)
+ *   NODELING_SMOKE_TOKEN_ID=0.0.11146645   # linked Hashinal smoke NFT
  *   NODELING_SMOKE_SERIAL=1
- *   NODELING_SMOKE_HRL=hcs://1/0.0.11144786
+ *   NODELING_SMOKE_HRL=hcs://1/0.0.11144977
  *   NODELING_HCS1_TOPIC_ID=0.0.11144977
  *   NODELING_HCS1_HASH=05fe3924838f8954e89000a338bb699f59a41f5c9233790df91cd665c0632a04
  *   NODELING_REGISTRY_ADDRESS=0xF19e3390933b318808a0df5Ed4fbD18783f10234
@@ -28,10 +28,11 @@ const HASHSCAN = 'https://hashscan.io/testnet';
 const RPC = process.env.HEDERA_RPC_URL || 'https://testnet.hashio.io/api';
 
 const DEFAULTS = {
-  smokeTopic: '0.0.11144786',
-  smokeToken: '0.0.11144787',
+  // Canonical linked Hashinal (2026-10-23). Historical empty-topic smoke: 0.0.11144787 / 0.0.11144786
+  smokeTopic: '0.0.11144977',
+  smokeToken: '0.0.11146645',
   smokeSerial: 1,
-  smokeHrl: 'hcs://1/0.0.11144786',
+  smokeHrl: 'hcs://1/0.0.11144977',
   hcs1Topic: '0.0.11144977',
   hcs1Hash: '05fe3924838f8954e89000a338bb699f59a41f5c9233790df91cd665c0632a04',
   registry: '0xF19e3390933b318808a0df5Ed4fbD18783f10234',
@@ -310,7 +311,7 @@ async function main(): Promise<void> {
   const linked =
     smokeHrl === `hcs://1/${hcs1Topic}`
       ? 'LINKED: smoke NFT HRL points at HCS-1 file topic'
-      : `GAP (known): smoke NFT HRL=${smokeHrl} points at empty topic; file inscription is hcs://1/${hcs1Topic}. Close with: fund ≥~15 HBAR then npm run mint:live -- --live --hrl hcs://1/${hcs1Topic}`;
+      : `NOT LINKED: smoke NFT HRL=${smokeHrl} ≠ hcs://1/${hcs1Topic}. Historical empty-topic smoke was 0.0.11144787→0.0.11144786; canonical linked mint is 0.0.11146645→0.0.11144977.`;
 
   let allOk = true;
   for (const c of checks) {

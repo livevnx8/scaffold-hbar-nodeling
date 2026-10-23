@@ -52,14 +52,14 @@ What it does (lean, **no custom royalty fees**):
 2. `TokenCreateTransaction` NFT FINITE (default maxSupply=1), treasury+supplyKey=operator
 3. `TokenMintTransaction` with metadata = UTF-8 bytes of that HRL
 
-By default `mint:live` uses topic-as-HRL (no file bytes). For real file bytes:
+By default `mint:live` uses topic-as-HRL (no file bytes). For a **linked** Hashinal (metadata HRL → file topic), inscribe then mint with `--hrl`:
 
 ```bash
 npm run inscribe:live -- --live
 npm run mint:live -- --live --hrl hcs://1/<topicFromInscribe>
 ```
 
-(TokenCreate still costs ~12+ HBAR - fund the operator first.)
+Canonical linked demo on testnet: NFT `0.0.11146645` → `hcs://1/0.0.11144977` ([smoke log](./testnet-smoke-log.md)). TokenCreate still costs ~12+ HBAR — fund the operator first.
 
 Outputs (public ids only):
 
